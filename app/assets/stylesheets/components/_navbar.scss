@@ -1,12 +1,15 @@
-.navbar-lewagon {
+.navbar-gina {
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  font-size: 18px;
+  color: black !important;
+  margin: 30px 60px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-gina .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-gina .navbar-brand img {
   width: 40px;
 }
