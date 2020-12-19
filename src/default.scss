@@ -4,9 +4,15 @@ html {
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
 }
 
 *, ::before, ::after {
@@ -30,4 +36,10 @@ a, a:hover {
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
+}
+
+.main {
+  max-width: 1450px;
+  padding: 0 30px;
+  margin: 0 auto;
 }
