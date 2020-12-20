@@ -35,6 +35,11 @@
       padding: 0px;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+
+      &:hover {
+        color: lime;
+        cursor: pointer;
+      }
     }
   }
 
