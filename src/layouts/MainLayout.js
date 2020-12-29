@@ -1,19 +1,17 @@
-import React from 'react';
+import React from 'react'
+import Header from './../components/Header'
+import Footer from './../components/Footer'
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
-const MainLayout = props => {
-  return (
+const MainLayout = props =>{
+  return(
     <div className="full-height">
-      <Header />
-      <div className="main">
-        {props.children}
-      </div>
-      <Footer />
+      <Header {...props} />
+        <div className="main">
+          {props.children}
+        </div>
+      <Footer/>
     </div>
-
   );
-};
+}
 
-export default MainLayout;
+export default MainLayout
