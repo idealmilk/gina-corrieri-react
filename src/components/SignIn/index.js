@@ -11,12 +11,12 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="signin">
+      <div className="sign-in">
         <div className="wrap">
           <h2>Log In</h2>
           <div className="formWrap">
             <form onSubmit={this.handleSubmit}>
-              <div className="socialSignIn">
+              <div className="social-sign-in">
                 <div className="row">
                   <Button onClick={signInWithGoogle}>
                     Sign in with Google
