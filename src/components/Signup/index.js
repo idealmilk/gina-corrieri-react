@@ -43,6 +43,19 @@ class Signup extends Component {
       })
       return;
     }
+
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(email, password);
+
+      await handleUserProfile(user, { displayName });
+
+      this.setState({
+        ...initialState
+      });
+
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   render() {
