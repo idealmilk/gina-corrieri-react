@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './styles.scss';
 import AuthWrapper from '../AuthWrapper';
@@ -76,6 +77,11 @@ class SignIn extends Component {
                   Sign in with Google
                 </Button>
               </div>
+            </div>
+            <div className="links">
+              <Link to="/recovery">
+                Forgotten Password?
+              </Link>
             </div>
           </form>
         </div>
