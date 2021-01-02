@@ -18,9 +18,14 @@ const Header = props => {
       <nav id="nav-menu-right" className="nav-menu">
         <p className="nav-link">About</p>
         {currentUser && [
-          <span onClick={() => auth.signOut()}>
-            <p className="nav-link">Log Out</p>
-          </span>
+          <div>
+            <span onClick={() => auth.signOut()}>
+              <p className="nav-link">Log Out</p>
+            </span>
+            <Link to="/dashboard">
+              <p className="nav-link">Account</p>
+            </Link>
+          </div>
         ]}
         {!currentUser && [
           <Link to="/login">
