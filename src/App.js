@@ -33,7 +33,7 @@ const App = props => {
         })
       }
 
-      setCurrentUser(userAuth);
+      dispatch(setCurrentUser(userAuth));
     });
 
     return () => {

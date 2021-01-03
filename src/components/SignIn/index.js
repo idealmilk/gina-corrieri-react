@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { signInUser, signInWithGoogle } from './../../redux/User/user.actions';
+import { signInUser, signInWithGoogle, resetAllAuthForms } from './../../redux/User/user.actions';
 
 import './styles.scss';
 import AuthWrapper from '../AuthWrapper';
@@ -21,6 +21,7 @@ const SignIn = props => {
   useEffect(() => {
     if (signInSuccess) {
       resetForm();
+      dispatch(resetAllAuthForms());
       props.history.push('/');
     }
   }, [signInSuccess]);
