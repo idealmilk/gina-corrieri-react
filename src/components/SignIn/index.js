@@ -1,53 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
-import { signInUser, signInWithGoogle, resetAllAuthForms } from './../../redux/User/user.actions';
+import { Link, useHistory } from 'react-router-dom';
+import { emailSignInStart, googleSignInStart } from './../../redux/User/user.actions';
 
 import './styles.scss';
-import AuthWrapper from '../AuthWrapper';
-import Button from '../forms/Button';
-import FormInput from '../forms/FormInput';
+
+import AuthWrapper from './../AuthWrapper';
+import FormInput from './../forms/FormInput';
+import Button from './../forms/Button';
 
 const mapState = ({ user }) => ({
-  signInSuccess: user.signInSuccess
+  currentUser: user.currentUser
 });
 
 const SignIn = props => {
-  const { signInSuccess } = useSelector(mapState);
   const dispatch = useDispatch();
+  const history = useHistory();
+  const { currentUser } = useSelector(mapState);
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('')
 
   useEffect(() => {
-    if (signInSuccess) {
+    if (currentUser) {
       resetForm();
-      dispatch(resetAllAuthForms());
-      props.history.push('/');
+      history.push('/');
     }
-  }, [signInSuccess]);
+
+  }, [currentUser]);
 
   const resetForm = () => {
     setEmail('');
     setPassword('');
   };
 
-  const handleGoogleSignIn = () => {
-    dispatch(signInWithGoogle());
-  }
-
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(signInUser({ email, password }));
+    dispatch(emailSignInStart({ email, password }));
+  }
+
+  const handleGoogleSignIn = () => {
+    dispatch(googleSignInStart());
   }
 
   const configAuthWrapper = {
-    headline: 'Log In'
+    headline: 'LogIn'
   };
 
   return (
     <AuthWrapper {...configAuthWrapper}>
       <div className="formWrap">
         <form onSubmit={handleSubmit}>
+
           <FormInput
             type="email"
             name="email"
@@ -55,6 +58,7 @@ const SignIn = props => {
             placeholder="Email"
             handleChange={e => setEmail(e.target.value)}
           />
+
           <FormInput
             type="password"
             name="password"
@@ -62,25 +66,29 @@ const SignIn = props => {
             placeholder="Password"
             handleChange={e => setPassword(e.target.value)}
           />
+
           <Button type="submit">
-            Login
-          </Button>
-          <div className="social-sign-in">
+            LogIn
+            </Button>
+
+          <div className="socialSignin">
             <div className="row">
               <Button onClick={handleGoogleSignIn}>
                 Sign in with Google
               </Button>
             </div>
           </div>
+
           <div className="links">
             <Link to="/recovery">
-              Forgotten Password?
-            </Link>
+              Reset Password
+              </Link>
           </div>
+
         </form>
       </div>
     </AuthWrapper>
   );
 }
 
-export default withRouter(SignIn);
+export default SignIn;
