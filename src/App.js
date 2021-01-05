@@ -15,6 +15,7 @@ import Registration from './pages/Registration';
 import Login from './pages/Login';
 import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
+import Admin from './pages/Admin';
 import './default.scss';
 
 const App = props => {
@@ -55,6 +56,11 @@ const App = props => {
               <Dashboard />
             </MainLayout>
           </WithAuth>
+        )} />
+        <Route path="/admin" render={() => (
+          <MainLayout>
+            <Admin />
+          </MainLayout>
         )} />
       </Switch>
     </div>
