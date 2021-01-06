@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addProductStart } from './../../redux/Products/products.actions';
 import { firestore } from './../../firebase/utils';
 import Modal from './../../components/Modal';
 import FormInput from './../../components/forms/FormInput';
@@ -7,6 +9,7 @@ import Button from './../../components/forms/Button';
 import './styles.scss';
 
 const Admin = props => {
+  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   const [hideModal, setHideModal] = useState(true);
   const [productCategory, setProductCategory] = useState('mens');
@@ -32,15 +35,14 @@ const Admin = props => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    firestore.collection('products').doc().set({
-      productCategory,
-      productName,
-      productThumbnail,
-      productPrice
-    }).then(e => {
-      // Success
-    });
-
+    dispatch(
+      addProductStart({
+        productCategory,
+        productName,
+        productThumbnail,
+        productPrice
+      })
+    );
   };
 
   return (
