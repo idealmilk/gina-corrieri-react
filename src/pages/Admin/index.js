@@ -67,11 +67,14 @@ const Admin = props => {
             <FormSelect
               label="Category"
               options={[{
-                value: "mens",
-                name: "Mens"
+                value: "t-shirts",
+                name: "T-Shirts"
               }, {
-                value: "womens",
-                name: "Womens"
+                value: "bags",
+                name: "Bags"
+              }, {
+                value: "trousers",
+                name: "Trousers"
               }]}
               handleChange={e => setProductCategory(e.target.value)}
             />
