@@ -1,11 +1,10 @@
 .adminToolbar {
   display: inline-block;
   width: 100%;
-  background-color: lime;
+  background-color: black;
   height: auto;
-  margin: 300px auto;
+  margin: 0 auto;
   padding: 0 10px;
-  z-index: 100000;
 
   ul, li {
     list-style-type: none;
@@ -18,7 +17,6 @@
 
     li {
       display: inline-block;
-      margin-right: 200px;
 
       a {
         display: block;
@@ -37,4 +35,5 @@
       }
     }
   }
+
 }
