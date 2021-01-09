@@ -5,16 +5,16 @@
   margin: 2rem 0;
 
   .productResults {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 -10px;
   }
 }
 
 .product {
   width: 33.33333333333%;
-  height: 55rem;
   margin: 0 auto 3rem;
   padding: 10px;
-  float: left;
 
   .thumb {
     display: block;
