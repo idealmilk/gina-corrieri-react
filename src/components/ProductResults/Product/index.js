@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Button from './../../forms/Button';
 
 const Product = ({
   productThumbnail,
@@ -6,7 +7,11 @@ const Product = ({
   productPrice
 }) => {
   if (!productThumbnail || !productName ||
-          typeof productPrice === 'undefined') return null;
+    typeof productPrice === 'undefined') return null;
+
+  const configAddToCartBtn = {
+    type: 'button'
+  };
 
   return (
     <div className="product">
@@ -25,6 +30,13 @@ const Product = ({
             <span className="price">
               £{productPrice}
             </span>
+          </li>
+          <li>
+            <div className="addToCart">
+              <Button {...configAddToCartBtn}>
+                Add to cart
+              </Button>
+            </div>
           </li>
         </ul>
       </div>
