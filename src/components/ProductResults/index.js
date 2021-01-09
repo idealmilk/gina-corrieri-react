@@ -33,21 +33,23 @@ const ProductResult = ({ }) => {
       <h1>
         Browse Products
       </h1>
-      {products.map((product, pos) => {
-        const { productThumbnail, productName, productPrice } = product;
-        if (!productThumbnail || !productName ||
-          typeof productPrice === 'undefined') return null;
+      <div className="productResults">
+        {products.map((product, pos) => {
+          const { productThumbnail, productName, productPrice } = product;
+          if (!productThumbnail || !productName ||
+            typeof productPrice === 'undefined') return null;
 
-        const configProduct = {
-          productThumbnail,
-          productName,
-          productPrice
-        };
+          const configProduct = {
+            productThumbnail,
+            productName,
+            productPrice
+          };
 
-        return (
-          <Product {...configProduct} />
-        );
-      })}
+          return (
+            <Product {...configProduct} />
+          );
+        })}
+      </div>
     </div>
   );
 };
