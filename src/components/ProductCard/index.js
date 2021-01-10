@@ -26,6 +26,12 @@ const ProductCard = ({}) => {
       fetchProductStart(productID)
     )
 
+    return () => {
+      dispatch(
+        setProduct({})
+      )
+    }
+
   }, []);
 
   const configAddToCartBtn = {
