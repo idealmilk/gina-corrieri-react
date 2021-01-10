@@ -68,9 +68,7 @@ const ProductResult = ({ }) => {
             typeof productPrice === 'undefined') return null;
 
           const configProduct = {
-            productThumbnail,
-            productName,
-            productPrice
+            ...product
           };
 
           return (
