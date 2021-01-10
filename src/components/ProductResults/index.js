@@ -10,11 +10,13 @@ const mapState = ({ productsData }) => ({
   products: productsData.products
 });
 
-const ProductResult = ({ }) => {
+const ProductResults = ({ }) => {
   const dispatch = useDispatch();
-  const { filterType } = useParams();
   const history = useHistory();
+  const { filterType } = useParams();
   const { products } = useSelector(mapState);
+
+  const { data, queryDoc, isLastPage } = products;
 
   useEffect(() => {
     dispatch(
@@ -27,14 +29,15 @@ const ProductResult = ({ }) => {
     history.push(`/search/${nextFilter}`);
   };
 
-  if (!Array.isArray(products)) return null;
-
-  if (products.length < 1) {
-    <div className="products">
-      <p>
-        No search results.
-      </p>
-    </div>
+  if (!Array.isArray(data)) return null;
+  if (data.length < 1) {
+    return (
+      <div className="products">
+        <p>
+          No search results.
+        </p>
+      </div>
+    );
   }
 
   const configFilters = {
@@ -52,6 +55,20 @@ const ProductResult = ({ }) => {
     handleChange: handleFilter
   };
 
+  const handleLoadMore = () => {
+    dispatch(
+      fetchProductsStart({
+        filterType,
+        startAfterDoc: queryDoc,
+        persistProducts: data
+      })
+    )
+  };
+
+  const configLoadMore = {
+    onLoadMoreEvt: handleLoadMore,
+  };
+
   return (
     <div className="products">
 
@@ -62,7 +79,7 @@ const ProductResult = ({ }) => {
       <FormSelect {...configFilters} />
 
       <div className="productResults">
-        {products.map((product, pos) => {
+        {data.map((product, pos) => {
           const { productThumbnail, productName, productPrice } = product;
           if (!productThumbnail || !productName ||
             typeof productPrice === 'undefined') return null;
@@ -80,4 +97,4 @@ const ProductResult = ({ }) => {
   );
 };
 
-export default ProductResult;
+export default ProductResults;

@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Button from './../../forms/Button';
 
 const Product = ({
@@ -9,7 +8,7 @@ const Product = ({
   productName,
   productPrice
 }) => {
-  if (!productThumbnail || !productName ||
+  if (!documentID || !productThumbnail || !productName ||
     typeof productPrice === 'undefined') return null;
 
   const configAddToCartBtn = {

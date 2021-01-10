@@ -5,20 +5,12 @@ import { handleAddProduct, handleFetchProducts,
   handleFetchProduct, handleDeleteProduct } from './products.helpers';
 import productsTypes from './products.types';
 
-export function* addProduct({ payload: {
-  productCategory,
-  productName,
-  productThumbnail,
-  productPrice
-}}) {
+export function* addProduct({ payload }) {
 
   try {
     const timestamp = new Date();
     yield handleAddProduct({
-      productCategory,
-      productName,
-      productThumbnail,
-      productPrice,
+      ...payload,
       productAdminUserUID: auth.currentUser.uid,
       createdDate: timestamp
     });

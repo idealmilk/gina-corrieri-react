@@ -2,13 +2,12 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductStart, setProduct } from './../../redux/Products/products.actions';
-
 import Button from './../forms/Button';
 import './styles.scss';
 
 const mapState = state => ({
   product: state.productsData.product
-})
+});
 
 const ProductCard = ({}) => {
   const dispatch = useDispatch();
@@ -18,7 +17,8 @@ const ProductCard = ({}) => {
   const {
     productThumbnail,
     productName,
-    productPrice
+    productPrice,
+    productDesc,
   } = product;
 
   useEffect(() => {
@@ -43,7 +43,6 @@ const ProductCard = ({}) => {
       <div className="hero">
         <img src={productThumbnail} />
       </div>
-
       <div className="productDetails">
         <ul>
           <li>
@@ -62,6 +61,11 @@ const ProductCard = ({}) => {
                 Add to cart
               </Button>
             </div>
+          </li>
+          <li>
+            <span
+              className="desc"
+              dangerouslySetInnerHTML={{ __html: productDesc }} />
           </li>
         </ul>
       </div>
