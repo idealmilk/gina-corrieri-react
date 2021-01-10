@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductStart, setProduct } from './../../redux/Products/products.actions';
 
+import Button from './../forms/Button';
 import './styles.scss';
 
 const mapState = state => ({
@@ -15,7 +16,9 @@ const ProductCard = ({}) => {
   const { product } = useSelector(mapState);
 
   const {
-    productName
+    productThumbnail,
+    productName,
+    productPrice
   } = product;
 
   useEffect(() => {
@@ -25,11 +28,37 @@ const ProductCard = ({}) => {
 
   }, []);
 
+  const configAddToCartBtn = {
+    type: 'button'
+  }
+
   return (
-    <div>
-      <h1>
-        {productName}
-      </h1>
+    <div className="productCard">
+      <div className="hero">
+        <img src={productThumbnail} />
+      </div>
+
+      <div className="productDetails">
+        <ul>
+          <li>
+            <h1>
+              {productName}
+            </h1>
+          </li>
+          <li>
+            <span>
+              £{productPrice}
+            </span>
+          </li>
+          <li>
+            <div className="addToCart">
+              <Button {...configAddToCartBtn}>
+                Add to cart
+              </Button>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
