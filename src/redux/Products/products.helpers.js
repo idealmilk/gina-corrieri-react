@@ -56,7 +56,7 @@ export const handleDeleteProduct = documentID => {
   });
 }
 
-export const handleFetchProduct = productID => {
+export const handleFetchProduct = (productID) => {
   return new Promise((resolve, reject) => {
     firestore
       .collection('products')
