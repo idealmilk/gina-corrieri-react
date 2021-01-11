@@ -7,21 +7,21 @@ export const existingCartItem = ({
   );
 };
 
-export const handleAddToCart () = ({
+export const handleAddToCart = ({
   prevCartItems,
-  nextCartItems
+  nextCartItem
 }) => {
   const quantityIncrement = 1;
-  const cartItemExists = existingCartItems({ previousCartItems, nextCartItem });
+  const cartItemExists = existingCartItem({ prevCartItems, nextCartItem });
 
   if (cartItemExists) {
-    return previousCartItems.map(cartItem =>
+    return prevCartItems.map(cartItem =>
       cartItem.documentID == nextCartItem.documentID
         ? {
           ...cartItem,
           quantity: cartItem.quantity + quantityIncrement
         } : cartItem
-    )
+    );
   }
 
   return [
@@ -30,5 +30,5 @@ export const handleAddToCart () = ({
       ...nextCartItem,
       quantity: quantityIncrement
     }
-  ]
+  ];
 };
