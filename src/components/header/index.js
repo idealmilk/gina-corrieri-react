@@ -44,35 +44,41 @@ const Header = props => {
 
         <div className="callToActions">
 
-          {currentUser && (
-            <ul>
+          <ul>
+
+            <li>
+              <Link>
+                Your Cart
+              </Link>
+            </li>
+
+            {currentUser && [
               <li>
                 <Link to="/dashboard">
                   My Account
                 </Link>
-              </li>
+              </li>,
               <li>
                 <span onClick={() => signOut()}>
                   LogOut
                 </span>
               </li>
-            </ul>
-          )}
+            ]}
 
-          {!currentUser && (
-            <ul>
+            {!currentUser && [
               <li>
                 <Link to="/registration">
                   Register
               </Link>
-              </li>
+              </li>,
               <li>
                 <Link to="/login">
                   Login
-              </Link>
+                </Link>
               </li>
-            </ul>
-          )}
+            ]}
+
+          </ul>
 
         </div>
       </div>
