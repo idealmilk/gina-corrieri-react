@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-
-import { addProduct } from './../../../redux/Cart/cart.actions';
-
 import Button from './../../forms/Button';
-
+import { useDispatch } from 'react-redux';
+import { addProduct } from './../../../redux/Cart/cart.actions';
 
 const Product = (product) => {
   const dispatch = useDispatch();
@@ -15,7 +12,6 @@ const Product = (product) => {
     productName,
     productPrice
   } = product;
-
   if (!documentID || !productThumbnail || !productName ||
     typeof productPrice === 'undefined') return null;
 
@@ -28,7 +24,7 @@ const Product = (product) => {
     dispatch(
       addProduct(product)
     )
-  }
+  };
 
   return (
     <div className="product">

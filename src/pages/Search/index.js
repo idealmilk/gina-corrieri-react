@@ -1,9 +1,9 @@
 import React from 'react';
-import ProductResults from './../../components/ProductResults'
+import ProductResults from './../../components/ProductResults';
 
 const Search = ({ }) => {
   return (
-    <div className="search-page">
+    <div className="searchPage">
       <ProductResults />
     </div>
   );
