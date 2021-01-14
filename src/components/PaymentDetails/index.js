@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
-import { CountryDropdown } from 'react-country-region-selector';
+import React, { useState, useEffect } from 'react';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import FormInput from './../forms/FormInput';
 import Button from './../forms/Button';
+import { CountryDropdown } from 'react-country-region-selector';
+import { apiInstance } from './../../Utils';
+import { selectCartTotal, selectCartItemsCount } from './../../redux/Cart/cart.selectors';
+import { clearCart } from './../../redux/Cart/cart.actions';
+import { createStructuredSelector } from 'reselect';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import './styles.scss';
 
 const initialAddressState = {
@@ -14,6 +21,7 @@ const initialAddressState = {
 };
 
 const PaymentDetails = ({}) => {
+  const elements = useElements();
   const [billingAddress, setBillingAddress] = useState({ ...initialAddressState });
   const [shippingAddress, setShippingAddress] = useState({ ...initialAddressState });
   const [recipientName, setRecipientName] = useState('');
@@ -37,7 +45,20 @@ const PaymentDetails = ({}) => {
 
   const handleFormSubmit = async evt => {
     evt.preventDefault();
-  }
+    const cardElement = elements.getElement('card');
+
+
+  };
+
+  const configCardElement = {
+    iconStyle: 'solid',
+    style: {
+      base: {
+        fontSize: '16px'
+      }
+    },
+    hidePostalCode: true
+  };
 
   return (
     <div className="paymentDetails">
@@ -183,6 +204,10 @@ const PaymentDetails = ({}) => {
         <h2>
           Card Details
         </h2>
+
+        <CardElement
+          options={configCardElement}
+        />
       </div>
 
       </form>
