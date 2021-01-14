@@ -98,6 +98,12 @@ const PaymentDetails = ({}) => {
 
         <div className="formRow checkoutInput">
           <CountryDropdown
+            onChange={val => handleShipping({
+              target: {
+                name: 'country',
+                value: val
+              }
+            })}
             value={shippingAddress.country}
             valueType="short"
           />
@@ -160,6 +166,12 @@ const PaymentDetails = ({}) => {
 
         <div className="formRow checkoutInput">
           <CountryDropdown
+            onChange={val => handleBilling({
+              target: {
+                name: 'country',
+                value: val
+              }
+            })}
             value={billingAddress.country}
             valueType="short"
           />
