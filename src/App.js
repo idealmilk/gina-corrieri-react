@@ -25,6 +25,7 @@ import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+import Payment from './pages/Payment';
 import './default.scss';
 
 const App = props => {
@@ -62,6 +63,11 @@ const App = props => {
         <Route path="/cart" render={() => (
           <MainLayout>
             <Cart />
+          </MainLayout>
+        )} />
+        <Route path="/payment" render={() => (
+          <MainLayout>
+            <Payment />
           </MainLayout>
         )} />
         <Route path="/registration" render={() => (
