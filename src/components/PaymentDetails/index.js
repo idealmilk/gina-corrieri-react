@@ -47,6 +47,16 @@ const PaymentDetails = ({}) => {
     evt.preventDefault();
     const cardElement = elements.getElement('card');
 
+    if (
+      !shippingAddress.line1 || !shippingAddress.city ||
+      !shippingAddress.state || !shippingAddress.postal_code ||
+      !shippingAddress.country || !billingAddress.line1 ||
+      !billingAddress.city || !billingAddress.state ||
+      !billingAddress.postal_code || !billingAddress.country ||
+      !recipientName || !cardholderName
+    ) {
+      return;
+    }
 
   };
 
@@ -70,6 +80,7 @@ const PaymentDetails = ({}) => {
         </h2>
 
         <FormInput
+        required
           placeholder="Recipient Name"
           name="recipientName"
           handleChange={evt => setRecipientName(evt.target.value)}
@@ -78,6 +89,7 @@ const PaymentDetails = ({}) => {
         />
 
         <FormInput
+        required
           placeholder="Line 1"
           name="line1"
           handleChange={evt => handleShipping(evt)}
@@ -94,6 +106,7 @@ const PaymentDetails = ({}) => {
         />
 
         <FormInput
+        required
           placeholder="City"
           name="city"
           handleChange={evt => handleShipping(evt)}
@@ -102,6 +115,7 @@ const PaymentDetails = ({}) => {
         />
 
         <FormInput
+        required
           placeholder="State"
           name="state"
           handleChange={evt => handleShipping(evt)}
@@ -110,6 +124,7 @@ const PaymentDetails = ({}) => {
         />
 
         <FormInput
+        required
           placeholder="Postal Code"
           name="postal_code"
           handleChange={evt => handleShipping(evt)}
@@ -119,6 +134,7 @@ const PaymentDetails = ({}) => {
 
         <div className="formRow checkoutInput">
           <CountryDropdown
+          required
             onChange={val => handleShipping({
               target: {
                 name: 'country',
@@ -138,6 +154,7 @@ const PaymentDetails = ({}) => {
         </h2>
 
         <FormInput
+        required
           placeholder="Cardholder's Name"
           name="cardholderName"
           handleChange={evt => setCardholderName(evt.target.value)}
@@ -146,6 +163,7 @@ const PaymentDetails = ({}) => {
         />
 
         <FormInput
+        required
           placeholder="Line 1"
           name="line1"
           handleChange={evt => handleBilling(evt)}
@@ -162,6 +180,7 @@ const PaymentDetails = ({}) => {
         />
 
         <FormInput
+        required
           placeholder="City"
           name="city"
           handleChange={evt => handleBilling(evt)}
@@ -170,6 +189,7 @@ const PaymentDetails = ({}) => {
         />
 
         <FormInput
+        required
           placeholder="State"
           name="state"
           handleChange={evt => handleBilling(evt)}
@@ -178,6 +198,7 @@ const PaymentDetails = ({}) => {
         />
 
         <FormInput
+        required
           placeholder="Postal Code"
           name="postal_code"
           handleChange={evt => handleBilling(evt)}
@@ -187,6 +208,7 @@ const PaymentDetails = ({}) => {
 
         <div className="formRow checkoutInput">
           <CountryDropdown
+          required
             onChange={val => handleBilling({
               target: {
                 name: 'country',
@@ -209,6 +231,10 @@ const PaymentDetails = ({}) => {
           options={configCardElement}
         />
       </div>
+
+      <Button type="submit">
+        Pay Now
+      </Button>
 
       </form>
     </div>
