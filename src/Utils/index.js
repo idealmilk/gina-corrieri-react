@@ -8,6 +8,6 @@ export const checkUserIsAdmin = currentUser => {
   return false;
 }
 
-export const apiInstance =axios.create({
+export const apiInstance = axios.create({
   baseURL: 'http://localhost:5001/gina-corrieri/us-central1/api'
 });

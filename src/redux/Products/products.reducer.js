@@ -1,3 +1,4 @@
+import productsTypes from './products.types';
 import productTypes from './products.types';
 
 const INITIAL_STATE = {
@@ -12,7 +13,7 @@ const productsReducer = (state=INITIAL_STATE, action) => {
         ...state,
         products: action.payload
       }
-    case productTypes.SET_PRODUCT:
+    case productsTypes.SET_PRODUCT:
       return {
         ...state,
         product: action.payload

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { checkUserSession } from './redux/User/user.actions';
 
-//components
+// components
 import AdminToolbar from './components/AdminToolbar';
 
 // hoc
@@ -12,6 +12,7 @@ import WithAdminAuth from './hoc/withAdminAuth';
 
 // layouts
 import MainLayout from './layouts/MainLayout';
+import HomepageLayout from './layouts/HomepageLayout';
 import AdminLayout from './layouts/AdminLayout';
 import DashboardLayout from './layouts/DashboardLayout';
 
@@ -26,6 +27,7 @@ import Admin from './pages/Admin';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import Payment from './pages/Payment';
+import Order from './pages/Order';
 import './default.scss';
 
 const App = props => {
@@ -41,10 +43,11 @@ const App = props => {
       <AdminToolbar />
       <Switch>
         <Route exact path="/" render={() => (
-          <MainLayout>
+          <HomepageLayout>
             <Homepage />
-          </MainLayout>
-        )} />
+          </HomepageLayout>
+        )}
+        />
         <Route exact path="/search" render={() => (
           <MainLayout>
             <Search />
@@ -92,6 +95,13 @@ const App = props => {
           <WithAuth>
             <DashboardLayout>
               <Dashboard />
+            </DashboardLayout>
+          </WithAuth>
+        )} />
+        <Route path="/order/:orderID" render={() => (
+          <WithAuth>
+            <DashboardLayout>
+              <Order />
             </DashboardLayout>
           </WithAuth>
         )} />
