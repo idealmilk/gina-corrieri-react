@@ -4,8 +4,13 @@ import Footer from './../components/Footer';
 
 const MainLayout = props => {
   return (
-    <div>
+    <div className="mainLayout">
       <Header {...props} />
+      <div className="pageTitle">
+        <h2>
+          {props.children.type.name}
+        </h2>
+      </div>
       <div className="main">
         {props.children}
       </div>
