@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { fetchProductsStart } from './../../redux/Products/products.actions';
 import Product from './Product';
-import FormSelect from './../forms/FormSelect';
-import LoadMore from './../LoadMore';
 import './styles.scss';
 
 const mapState = ({ productsData }) => ({
@@ -13,22 +11,18 @@ const mapState = ({ productsData }) => ({
 
 const ProductResults = ({ }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const { filterType } = useParams();
   const { products } = useSelector(mapState);
 
-  const { data, queryDoc, isLastPage } = products;
+  console.log(filterType)
+
+  const { data } = products;
 
   useEffect(() => {
     dispatch(
       fetchProductsStart({ filterType })
     )
   }, [filterType]);
-
-  // const handleFilter = (e) => {
-  //   const nextFilter = e.target.value;
-  //   history.push(`/shop/${nextFilter}`);
-  // };
 
   if (!Array.isArray(data)) return null;
   if (data.length < 1) {
@@ -41,53 +35,23 @@ const ProductResults = ({ }) => {
     );
   }
 
-  // const configFilters = {
-  //   defaultValue: filterType,
-  //   options: [{
-  //     name: 'Show all',
-  //     value: ''
-  //   }, {
-  //     name: 'Mens',
-  //     value: 'mens'
-  //   }, {
-  //     name: 'Womens',
-  //     value: 'womens'
-  //   }],
-  //   handleChange: handleFilter
-  // };
-
-  const handleLoadMore = () => {
-    dispatch(
-      fetchProductsStart({
-        filterType,
-        startAfterDoc: queryDoc,
-        persistProducts: data
-      })
-    )
-  };
-
-  const configLoadMore = {
-    onLoadMoreEvt: handleLoadMore,
-  };
-
   return (
     <div className="productResults">
       <div className="filter">
         <div className="wrap">
           <p>
-            <a href="/shop/mens">Mens</a>
+            {filterType === undefined ? "Shop All" : <a href="/shop">Shop All</a>}
           </p>
           <p>
-            <a href="/shop/womens">Womens</a>
+            {filterType === "mens" ? "Mens" : <a href="/shop/mens">Womens</a>}
+          </p>
+          <p>
+            {filterType === "womens" ? "Women" : <a href="/shop/womens">Womens</a>}
           </p>
         </div>
       </div>
 
       <div className="products">
-
-        {/*
-          {FormSelect {...configFilters} />
-        */}
 
         <div className="productResults">
           {data.map((product, pos) => {
@@ -104,10 +68,6 @@ const ProductResults = ({ }) => {
             );
           })}
         </div>
-
-        {!isLastPage && (
-          <LoadMore {...configLoadMore} />
-        )}
 
       </div>
 
