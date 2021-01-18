@@ -18,7 +18,7 @@ import DashboardLayout from './layouts/DashboardLayout';
 
 // pages
 import Homepage from './pages/Homepage';
-import Search from './pages/Search';
+import Shop from './pages/Shop';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
 import Recovery from './pages/Recovery';
@@ -48,14 +48,14 @@ const App = props => {
           </HomepageLayout>
         )}
         />
-        <Route exact path="/search" render={() => (
+        <Route exact path="/shop" render={() => (
           <MainLayout>
-            <Search />
+            <Shop />
           </MainLayout>
         )} />
-        <Route path="/search/:filterType" render={() => (
+        <Route path="/shop/:filterType" render={() => (
           <MainLayout>
-            <Search />
+            <Shop />
           </MainLayout>
         )} />
         <Route path="/product/:productID" render={() => (
