@@ -1,3 +1,37 @@
+.productResults {
+  position: relative;
+
+  .filter {
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
+    line-height: 1;
+  
+    .wrap {
+      display: flex;
+      width: 10rem;
+      justify-content: space-between;
+      margin: 0 auto;
+  
+      text-align: center;
+  
+      p {
+        text-transform: uppercase;
+  
+        a {
+          color: white;
+          mix-blend-mode: difference;
+
+          &:hover {
+            color: lime;
+          }
+        }
+      }
+    }
+  }
+}
+
 .products {
   display: block;
   width: 100%;
@@ -5,8 +39,7 @@
   margin: 2rem 0;
 
   .productResults {
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
     margin: 3rem -10px 0;
   }
 }

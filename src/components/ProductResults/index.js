@@ -25,10 +25,10 @@ const ProductResults = ({ }) => {
     )
   }, [filterType]);
 
-  const handleFilter = (e) => {
-    const nextFilter = e.target.value;
-    history.push(`/shop/${nextFilter}`);
-  };
+  // const handleFilter = (e) => {
+  //   const nextFilter = e.target.value;
+  //   history.push(`/shop/${nextFilter}`);
+  // };
 
   if (!Array.isArray(data)) return null;
   if (data.length < 1) {
@@ -41,20 +41,20 @@ const ProductResults = ({ }) => {
     );
   }
 
-  const configFilters = {
-    defaultValue: filterType,
-    options: [{
-      name: 'Show all',
-      value: ''
-    }, {
-      name: 'Mens',
-      value: 'mens'
-    }, {
-      name: 'Womens',
-      value: 'womens'
-    }],
-    handleChange: handleFilter
-  };
+  // const configFilters = {
+  //   defaultValue: filterType,
+  //   options: [{
+  //     name: 'Show all',
+  //     value: ''
+  //   }, {
+  //     name: 'Mens',
+  //     value: 'mens'
+  //   }, {
+  //     name: 'Womens',
+  //     value: 'womens'
+  //   }],
+  //   handleChange: handleFilter
+  // };
 
   const handleLoadMore = () => {
     dispatch(
@@ -71,33 +71,45 @@ const ProductResults = ({ }) => {
   };
 
   return (
-    <div className="products">
-
-      <h1>
-        Browse Products
-      </h1>
-
-      <FormSelect {...configFilters} />
-
-      <div className="productResults">
-        {data.map((product, pos) => {
-          const { productThumbnail, productName, productPrice } = product;
-          if (!productThumbnail || !productName ||
-            typeof productPrice === 'undefined') return null;
-
-          const configProduct = {
-            ...product
-          };
-
-          return (
-            <Product key={pos} {...configProduct} />
-          );
-        })}
+    <div className="productResults">
+      <div className="filter">
+        <div className="wrap">
+          <p>
+            <a href="/shop/mens">Mens</a>
+          </p>
+          <p>
+            <a href="/shop/womens">Womens</a>
+          </p>
+        </div>
       </div>
 
-      {!isLastPage && (
-        <LoadMore {...configLoadMore} />
-      )}
+      <div className="products">
+
+        {/*
+          {FormSelect {...configFilters} />
+        */}
+
+        <div className="productResults">
+          {data.map((product, pos) => {
+            const { productThumbnail, productName, productPrice } = product;
+            if (!productThumbnail || !productName ||
+              typeof productPrice === 'undefined') return null;
+
+            const configProduct = {
+              ...product
+            };
+
+            return (
+              <Product key={pos} {...configProduct} />
+            );
+          })}
+        </div>
+
+        {!isLastPage && (
+          <LoadMore {...configLoadMore} />
+        )}
+
+      </div>
 
     </div>
   );
