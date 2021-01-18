@@ -43,7 +43,7 @@ const ProductResults = ({ }) => {
             {filterType === undefined ? "Shop All" : <a href="/shop">Shop All</a>}
           </p>
           <p>
-            {filterType === "mens" ? "Mens" : <a href="/shop/mens">Womens</a>}
+            {filterType === "mens" ? "Mens" : <a href="/shop/mens">Mens</a>}
           </p>
           <p>
             {filterType === "womens" ? "Women" : <a href="/shop/womens">Womens</a>}
