@@ -5,7 +5,12 @@ const Footer = props => {
   return (
     <footer className="footer">
       <div className="wrap">
-        © SimpleTut 2020
+        <div>
+          Gina Corrieri
+        </div>
+        <div>
+          Instagram
+        </div>
       </div>
     </footer>
   );

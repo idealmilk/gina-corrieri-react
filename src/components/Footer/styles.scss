@@ -1,7 +1,13 @@
 .footer {
   .wrap {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
     max-width: 1450px;
+    width: 100%;
     padding: 20px 10px;
     margin: 0 auto;
+    text-transform: uppercase;
   }
 }
