@@ -7,7 +7,7 @@ const Directory = props => {
   return (
     <div className="directory">
       <div className="wrap">
-        <video className='videoTag' autoPlay loop muted>
+        <video className='video' autoPlay loop muted>
           <source src={Phenomena} type='video/mp4' />
         </video>
       </div>
