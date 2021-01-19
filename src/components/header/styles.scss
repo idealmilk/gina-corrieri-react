@@ -1,58 +1,105 @@
 .header {
-  height: 6.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 
-  .wrap {
-    position: relative;
-    height: 100%;
-    max-width: 1450px;
-    margin: 0 auto;
+  .headerMain {
+    height: 6.5rem;
 
-    .logo {
-      width: 13.0rem;
-      position: absolute;
-      top: 50%; left: 0; right: 0;
-      margin: 0 auto; 
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      transform: translateY(-50%);
-
-      img {
-        display: block;
-        width: 100%;
-        margin: 0;
+    .wrap {
+      position: relative;
+      height: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+  
+      .logo {
+        width: 13.0rem;
+        position: absolute;
+        top: 50%; left: 0; right: 0;
+        margin: 0 auto; 
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+  
+        img {
+          display: block;
+          width: 100%;
+          margin: 0;
+        }
       }
-    }
-
-    nav {
-      position: absolute;
-      top: 50%; left: 10px;
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      transform: translateY(-50%);
-
-      ul, ul li {
-        padding: 0;
-        margin: 0;
-        height: 100%;
+  
+      nav {
+        position: absolute;
+        top: 50%; left: 10px;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+  
+        ul, ul li {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+        }
+  
+        ul {
+          text-align: center;
+  
+          li {
+            display: inline-block;
+            margin: 0 1rem;
+            list-style-type: none;
+  
+            a {
+              font-size: 1.8rem;
+              line-height: 6.5rem;
+              vertical-align: middle;
+              color: black;
+              text-decoration: none;
+              text-transform: uppercase;
+              cursor: pointer;
+  
+              &:hover {
+                color: lime;
+              }
+            }
+          }
+        }
       }
-
-      ul {
-        text-align: center;
-
+  
+      .callToActions {
+        position: absolute;
+        top: 50%; right: 10px;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+  
+        i {
+          display: none;
+        }
+  
+        ul, li {
+          margin: 0;
+          padding: 0;
+        }
+  
         li {
           display: inline-block;
-          margin: 0 1rem;
           list-style-type: none;
-
-          a {
+          margin-right: 1.5rem;
+  
+          &:last-child {
+            margin-right: 0;
+          }
+  
+          a, span {
             font-size: 1.8rem;
-            line-height: 6.5rem;
-            vertical-align: middle;
+            line-height: 1;
             color: black;
             text-decoration: none;
             text-transform: uppercase;
             cursor: pointer;
-
+  
             &:hover {
               color: lime;
             }
@@ -60,51 +107,7 @@
         }
       }
     }
-
-    .callToActions {
-      position: absolute;
-      top: 50%; right: 10px;
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      transform: translateY(-50%);
-
-      i {
-        display: none;
-      }
-
-      ul, li {
-        margin: 0;
-        padding: 0;
-      }
-
-      li {
-        display: inline-block;
-        list-style-type: none;
-        margin-right: 1.5rem;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        a, span {
-          font-size: 1.8rem;
-          line-height: 1;
-          color: black;
-          text-decoration: none;
-          text-transform: uppercase;
-          cursor: pointer;
-
-          &:hover {
-            color: lime;
-          }
-        }
-
-      }
-
-    }
-
   }
-
 }
 
 .mobileMenu {
