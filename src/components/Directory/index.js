@@ -1,33 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ShopMen from './../../assets/shopMens.jpg';
-import ShopWomen from './../../assets/shopWomens.jpg';
+import Phenomena from './../../assets/phenomena.mp4';
 import './styles.scss';
 
 const Directory = props => {
   return (
     <div className="directory">
       <div className="wrap">
-        <div
-          className="item"
-          style={{
-            backgroundImage: `url(${ShopWomen})`
-          }}
-        >
-          <Link to="/shop/womens">
-            Shop Womens
-          </Link>
-        </div>
-        <div
-          className="item"
-          style={{
-            backgroundImage: `url(${ShopMen})`
-          }}
-        >
-          <Link to="/shop/mens">
-            Shop Mens
-          </Link>
-        </div>
+        <video className='videoTag' autoPlay loop muted>
+          <source src={Phenomena} type='video/mp4' />
+        </video>
       </div>
     </div>
   );
