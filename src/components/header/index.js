@@ -41,13 +41,13 @@ const Header = props => {
           <nav className={`mainMenu ${activeMenu ? 'active' : ''}`}>
             <ul>
               <li>
-                <Link to="/">
-                  Home
+                <Link to="/shop">
+                  Shop
                 </Link>
               </li>
               <li>
-                <Link to="/shop">
-                  Shop
+                <Link to="/about">
+                  About
                 </Link>
               </li>
             </ul>
