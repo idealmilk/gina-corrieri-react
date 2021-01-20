@@ -15,6 +15,7 @@ import DashboardLayout from './layouts/DashboardLayout';
 
 // pages
 import Homepage from './pages/Homepage';
+import About from './pages/About';
 import Shop from './pages/Shop';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
@@ -42,8 +43,12 @@ const App = props => {
           <HomepageLayout>
             <Homepage />
           </HomepageLayout>
-        )}
-        />
+        )} />
+        <Route path="/about" render={() => (
+          <MainLayout>
+            <About />
+          </MainLayout>
+        )} />
         <Route exact path="/shop" render={() => (
           <MainLayout>
             <Shop />
