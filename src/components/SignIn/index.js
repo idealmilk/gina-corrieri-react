@@ -80,8 +80,8 @@ const SignIn = props => {
           </div>
 
           <div className="links">
-            <Link to="/registration">
-              Register
+            <Link to="/signup">
+              Sign Up
             </Link>
             {` | `}
             <Link to="/recovery">

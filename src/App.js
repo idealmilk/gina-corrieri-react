@@ -17,7 +17,7 @@ import DashboardLayout from './layouts/DashboardLayout';
 import Homepage from './pages/Homepage';
 import About from './pages/About';
 import Shop from './pages/Shop';
-import Registration from './pages/Registration';
+import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
@@ -76,9 +76,9 @@ const App = props => {
             </MainLayout>
           </WithAuth>
         )} />
-        <Route path="/registration" render={() => (
+        <Route path="/signup" render={() => (
           <MainLayout>
-            <Registration />
+            <SignUp />
           </MainLayout>
         )} />
         <Route path="/login"
