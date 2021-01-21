@@ -5,23 +5,21 @@
     position: fixed;
     width: 100%;
     z-index: 1;
-    line-height: 1;
-    margin-left: -9.5px;
+    margin-top: 6rem;
   
     .wrap {
       display: flex;
       width: 22rem;
       justify-content: space-between;
       margin: 0 auto;
-  
       text-align: center;
   
       p {
         text-transform: uppercase;
-        color: white;
+        color: black;
   
         a {
-          color: white;
+          color: black;
 
           &:hover {
             color: lime;
@@ -37,6 +35,7 @@
   width: 100%;
   padding: 0;
   margin: 2rem 0;
+  transform: translate(0, 140px);
 
   .productResults {
     display: block;
@@ -46,7 +45,7 @@
 
 .product {
   width: 33.333333333333333%;
-  margin: 0 auto 2rem;
+  margin: 0 auto 8rem;
   padding: 0 10px;
 
   .thumb {
