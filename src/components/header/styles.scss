@@ -1,4 +1,5 @@
 .header {
+  display: block;
   position: fixed;
   top: 0;
   width: 100%;
@@ -12,6 +13,7 @@
       position: relative;
       height: 100%;
       max-width: 1350px;
+      width: 1350px;
       margin: 0 auto;
   
       .logo {
@@ -48,7 +50,7 @@
   
           li {
             display: inline-block;
-            margin: 0 1rem;
+            margin: 0 1rem 0 0;
             list-style-type: none;
   
             a {
@@ -70,7 +72,7 @@
   
       .callToActions {
         position: absolute;
-        top: 50%; right: 10px;
+        top: 50%; right: 0;
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         transform: translateY(-50%);

@@ -1,21 +1,33 @@
 .footer {
-  .wrap {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    bottom: 0;
-    max-width: 1450px;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  
+  .footerMain {
+    height: 6.5rem;
     width: 100%;
-    padding: 20px 10px;
-    margin: 0 auto;
-    text-transform: uppercase;
 
-    .instagram {
-      a {
-        color: black;
-
-        &:hover {
-          color: lime;
+    .wrap {
+      position: relative;
+      display: flex;
+      height: 100%;
+      max-width: 1350px;
+      width: 1350px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      justify-content: space-between;
+      font-size: 2rem;
+      text-transform: uppercase;
+  
+      .instagram {
+        a {
+          color: black;
+  
+          &:hover {
+            color: lime;
+          }
         }
       }
     }
