@@ -31,15 +31,17 @@ const Product = (product) => {
 
   return (
     <div className="product">
-      <div className="thumb">
-        <Link to={`/product/${documentID}`}>
-          <Tilt className="Tilt" options={{ max : 25, reverse: true }} >
+      <div>
+        
+        <Tilt className="tilt" options={{ max : 25, reverse: true }} >
+          <Link to={`/product/${documentID}`} className="thumb">
             <img src={productThumbnail} alt={productName} />
-          </Tilt>
-        </Link>
+          </Link>
+        </Tilt>
+        
       </div>
 
-      <div className="details">
+      {/*<div className="details">
         <ul>
           <li>
             <span className="name">
@@ -61,7 +63,7 @@ const Product = (product) => {
             </div>
           </li>
         </ul>
-      </div>
+      </div>*/}
 
     </div>
   );
