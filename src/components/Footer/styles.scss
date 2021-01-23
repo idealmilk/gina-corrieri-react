@@ -20,8 +20,16 @@
       justify-content: space-between;
       font-size: 2rem;
       text-transform: uppercase;
+
+      .info, .instagram {
+        position: absolute;
+        top: 50%; 
+        transform: translateY(-50%);
+      }
   
       .instagram {
+        right: 0;
+
         a {
           color: black;
   

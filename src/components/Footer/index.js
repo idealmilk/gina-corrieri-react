@@ -6,7 +6,7 @@ const Footer = props => {
     <footer className="footer">
       <div className="footerMain">
         <div className="wrap">
-          <div>
+          <div className="info">
             Gina Corrieri
           </div>
           <div className="instagram">
