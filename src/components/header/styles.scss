@@ -85,26 +85,38 @@
           margin: 0;
           padding: 0;
         }
-  
-        li {
-          display: inline-block;
-          list-style-type: none;
-          margin-right: 1.5rem;
-  
-          &:last-child {
-            margin-right: 0;
-          }
-  
-          a, span {
-            font-size: 2rem;
-            line-height: 1;
-            color: black;
-            text-decoration: none;
-            text-transform: uppercase;
-            cursor: pointer;
-  
-            &:hover {
+
+        ul {
+          .cart {
+            .cartSize {
+              position: absolute;
+              top: 0;
               color: lime;
+              padding-left: 2px;
+              font-size: 1.4rem;
+            }
+          }
+
+          li {
+            display: inline-block;
+            list-style-type: none;
+            margin-right: 1.5rem;
+    
+            &:last-child {
+              margin-right: 0;
+            }
+    
+            a, span {
+              font-size: 2rem;
+              line-height: 1;
+              color: black;
+              text-decoration: none;
+              text-transform: uppercase;
+              cursor: pointer;
+    
+              &:hover {
+                color: lime;
+              }
             }
           }
         }

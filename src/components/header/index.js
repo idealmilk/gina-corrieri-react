@@ -57,10 +57,9 @@ const Header = props => {
 
             <ul>
 
-              <li>
+              <li className="cart">
                 <Link to="/cart">
-                  Cart ({totalNumCartItems})
-                  <i className="fas fa-shopping-basket"></i>
+                  Cart <span className="cartSize">0{totalNumCartItems}</span>
                 </Link>
               </li>
 
