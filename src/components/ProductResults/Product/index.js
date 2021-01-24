@@ -41,29 +41,23 @@ const Product = (product) => {
         
       </div>
 
-      {/*<div className="details">
-        <ul>
-          <li>
-            <span className="name">
-              <Link to={`/product/${documentID}`}>
-                {productName}
-              </Link>
-            </span>
-          </li>
-          <li>
-            <span className="price">
-              £{productPrice}
-            </span>
-          </li>
-          <li>
+      <div className="details">
+        <div className="name">
+          <Link to={`/product/${documentID}`}>
+            {productName}
+          </Link>
+        </div>
+        <div className="price">
+          £{parseFloat(productPrice).toFixed(2)}
+        </div>
+          {/*<li>
             <div className="addToCart">
               <Button {...configAddToCartBtn} onClick={() => handleAddToCart(product)}>
                 Add to cart
               </Button>
             </div>
-          </li>
-        </ul>
-      </div>*/}
+          </li>*/}
+      </div>
 
     </div>
   );
