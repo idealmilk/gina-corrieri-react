@@ -22,6 +22,7 @@ const ProductCard = ({}) => {
     productPrice,
     productDesc,
     productSize,
+    productStyle,
     productColour,
     productNeckline,
     productLength,
@@ -69,8 +70,13 @@ const ProductCard = ({}) => {
             </h1>
           </li>
           <li>
+            <span
+              className="desc"
+              dangerouslySetInnerHTML={{ __html: productDesc }} />
+          </li>
+          <li>
             <span>
-              £{productPrice}
+            Style: {productStyle}
             </span>
           </li>
           <li>
@@ -84,18 +90,23 @@ const ProductCard = ({}) => {
             </span>
           </li>
           <li>
-            <div className="addToCart">
-              <Button {...configAddToCartBtn} onClick={() => handleAddToCart(product)}>
-                Add to cart
-              </Button>
-            </div>
-          </li>
-          <li>
-            <span
-              className="desc"
-              dangerouslySetInnerHTML={{ __html: productDesc }} />
+            <span>
+              Measurements +
+            </span>
           </li>
         </ul>
+      </div>
+      <div className="buy">
+        <div className="price">
+          <span>
+            £{productPrice}
+          </span>
+        </div>
+        <div className="addToCart">
+          <Button {...configAddToCartBtn} onClick={() => handleAddToCart(product)}>
+            Add to cart
+          </Button>
+        </div>
       </div>
     </div>
   );

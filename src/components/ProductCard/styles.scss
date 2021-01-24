@@ -1,12 +1,12 @@
 .productCard {
-  width: 100%;
+  width: 1450px;
   height: 100%;
   margin: 0 auto 10.0rem;
 
   .hero {
     display: block;
+    right: 0; left: 0;
     width: 45rem;
-    height: 100%;
     margin: 0 auto;
 
     img {
@@ -19,7 +19,21 @@
     }
   }
 
+  .productDetails, .buy, .hero {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .productDetails, .buy {
+    width: calc((100% - 45rem) / 2);
+    padding: 0 5rem;
+  }
+
   .productDetails {
+    left: 0;
+
     ul, ul li {
       padding: 0;
       margin: 0;
@@ -31,8 +45,21 @@
 
        h1 {
          margin: 0;
+         font-size: 5.3rem;
+       }
+
+       .desc {
+         font-size: 2rem;
        }
      }
+  }
+
+  .buy {
+    right: 0;
+
+    .price {
+      font-size: 5.5rem;
+    }
   }
 
   .addToCart {
