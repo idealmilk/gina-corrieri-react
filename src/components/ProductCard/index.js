@@ -21,6 +21,14 @@ const ProductCard = ({}) => {
     productName,
     productPrice,
     productDesc,
+    productSize,
+    productColour,
+    productNeckline,
+    productLength,
+    productWidth,
+    productShoulder,
+    productArmhole,
+    productWaist
   } = product;
 
   useEffect(() => {
@@ -63,6 +71,16 @@ const ProductCard = ({}) => {
           <li>
             <span>
               £{productPrice}
+            </span>
+          </li>
+          <li>
+            <span>
+            Colour: {productColour}
+            </span>
+          </li>
+          <li>
+            <span>
+              Available in size {productSize}
             </span>
           </li>
           <li>
