@@ -22,7 +22,7 @@ import Login from './pages/Login';
 import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
-import ProductDetails from './pages/ProductDetails';
+import Product from './pages/Product';
 import Cart from './pages/Cart';
 import Payment from './pages/Payment';
 import Order from './pages/Order';
@@ -61,7 +61,7 @@ const App = props => {
         )} />
         <Route path="/product/:productID" render={() => (
           <MainLayout>
-            <ProductDetails />
+            <Product />
           </MainLayout>
         )} />
         <Route path="/cart" render={() => (
