@@ -21,6 +21,7 @@ const Admin = props => {
   const [productName, setProductName] = useState('');
   const [productThumbnail, setProductThumbnail] = useState('');
   const [productSize, setProductSize] = useState('');
+  const [productStyle, setProductStyle] = useState('');
   const [productColour, setProductColour] = useState('');
   const [productNeckline, setProductNeckline] = useState(0);
   const [productLength, setProductLength] = useState(0);
@@ -52,6 +53,7 @@ const Admin = props => {
     setProductName('');
     setProductThumbnail('');
     setProductSize('');
+    setProductStyle('');
     setProductColour('');
     setProductNeckline(0);
     setProductLength(0);
@@ -72,6 +74,7 @@ const Admin = props => {
         productName,
         productThumbnail,
         productSize,
+        productStyle,
         productColour,
         productNeckline,
         productLength,
@@ -155,6 +158,13 @@ const Admin = props => {
               type="text"
               value={productSize}
               handleChange={e => setProductSize(e.target.value)}
+            />
+
+            <FormInput
+              label="Style"
+              type="text"
+              value={productStyle}
+              handleChange={e => setProductStyle(e.target.value)}
             />
 
             <FormInput
