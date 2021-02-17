@@ -31,6 +31,7 @@ const Admin = props => {
   const [productWaist, setProductWaist] = useState(0);
   const [productPrice, setProductPrice] = useState(0);
   const [productDesc, setProductDesc] = useState('');
+  const [productQuantity, setProductQuantity] = useState(0);
 
   const { data, queryDoc, isLastPage } = products;
 
@@ -63,6 +64,7 @@ const Admin = props => {
     setProductWaist(0);
     setProductPrice(0);
     setProductDesc('');
+    setProductQuantity(0);
   };
 
   const handleSubmit = e => {
@@ -84,6 +86,7 @@ const Admin = props => {
         productWaist,
         productPrice,
         productDesc,
+        productQuantity,
       })
     );
     resetForm();
@@ -246,6 +249,16 @@ const Admin = props => {
 
             <CKEditor
               onChange={evt => setProductDesc(evt.editor.getData())}
+            />
+
+            <FormInput
+              label="Quantity"
+              type="number"
+              min="0"
+              max="1000"
+              step="1"
+              value={productQuantity}
+              handleChange={e => setProductQuantity(e.target.value)}
             />
 
             <br />
