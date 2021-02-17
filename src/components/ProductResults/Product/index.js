@@ -12,9 +12,11 @@ const Product = (product) => {
     documentID,
     productThumbnail,
     productName,
-    productPrice
+    productPrice,
+    productQuantity
   } = product;
-  if (!documentID || !productThumbnail || !productName ||
+
+  if (!documentID || !productThumbnail || !productName || !productPrice ||
     typeof productPrice === 'undefined') return null;
 
   const configAddToCartBtn = {
@@ -29,23 +31,39 @@ const Product = (product) => {
     history.push('/cart');
   };
 
+  const activeProduct = 
+    <Tilt className="tilt" options={{ max : 25, reverse: true }} >
+      <Link to={`/product/${documentID}`} className="thumb">
+        <img src={productThumbnail} alt={productName} />
+      </Link>
+    </Tilt>;
+
+  const inactiveProduct =
+    <Tilt className="tilt" options={{ max : 25, reverse: true }} >
+      <div className="thumb">
+        <img src={productThumbnail} alt={productName} className="inactiveImg"/>
+        <h3>SOLD OUT</h3>
+      </div>
+    </Tilt>;
+
   return (
     <div className="product">
       <div>
         
-        <Tilt className="tilt" options={{ max : 25, reverse: true }} >
-          <Link to={`/product/${documentID}`} className="thumb">
-            <img src={productThumbnail} alt={productName} />
-          </Link>
-        </Tilt>
+        {productQuantity > 0 ? activeProduct : inactiveProduct}
         
       </div>
 
-      <div className="details">
+      <div 
+        className="details"
+        style={ productQuantity > 0 ? { opacity:'1'} : {opacity : '0.5'} }
+      >
         <div className="name">
-          <Link to={`/product/${documentID}`}>
-            {productName}
-          </Link>
+          {productQuantity <= 0 ? productName :
+            <Link to={`/product/${documentID}`}>
+              {productName}
+            </Link>
+          }
         </div>
         <div className="price">
           £{parseFloat(productPrice).toFixed(2)}

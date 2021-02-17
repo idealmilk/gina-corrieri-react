@@ -18,6 +18,8 @@ const ProductResults = ({ }) => {
 
   const { data } = products;
 
+  console.log(data);
+
   useEffect(() => {
     dispatch(
       fetchProductsStart({ filterType })
@@ -58,8 +60,8 @@ const ProductResults = ({ }) => {
 
         <div className="productResults">
           {data.map((product, pos) => {
-            const { productThumbnail, productName, productPrice } = product;
-            if (!productThumbnail || !productName ||
+            const { productThumbnail, productName, productPrice, productQuantity } = product;
+            if (!productThumbnail || !productName || !productPrice ||
               typeof productPrice === 'undefined') return null;
 
             const configProduct = {
