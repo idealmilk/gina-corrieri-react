@@ -21,4 +21,4 @@ yarn-error.log*
 
 *.mp4
 
-/src/stripe
+src/stripe/config.js
