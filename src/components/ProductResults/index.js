@@ -18,8 +18,6 @@ const ProductResults = ({ }) => {
 
     const { data } = products;
 
-    console.log(data);
-
     useEffect(() => {
         dispatch(
             fetchProductsStart({ filterType })

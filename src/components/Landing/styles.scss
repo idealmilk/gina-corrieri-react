@@ -1,0 +1,36 @@
+.landing {
+  height: 100%;
+  max-width: 1350px;
+  width: 1350px;
+  margin: 0 auto;
+  z-index: -2;
+
+  .video {
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    max-width: 60%;
+    width: 60%;
+  }
+
+  .logo {
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .directory {
+    width: 100%;
+    height: 50%;
+  }
+}
