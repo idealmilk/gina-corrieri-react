@@ -6,7 +6,8 @@
     width: 100%;
   }
 
-  h1, p {
+  h1,
+  p {
     text-align: center;
   }
 
@@ -15,7 +16,7 @@
   }
 
   .cart {
-    max-width: 100.0rem;
+    max-width: 100rem;
     margin: 0 auto;
 
     table {
@@ -35,9 +36,25 @@
   }
 
   .cartItem {
+    margin: 40px 0;
+
+    td {
+      position: relative;
+    }
+
     td img {
       display: block;
-      width: 100%;
+      height: 125px;
+      width: 100px;
+      object-fit: contain;
+    }
+
+    td p {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
   }
 
@@ -49,11 +66,9 @@
   .cartBtn {
     cursor: pointer;
   }
-
 }
 
 @media only screen and (max-width: 980px) {
-
   .checkoutHeader {
     display: none;
   }
@@ -70,7 +85,7 @@
   .checkout .cartBtn.remove {
     display: block;
     width: 100%;
-    padding: 1.0rem;
+    padding: 1rem;
     background-color: black;
     color: white;
   }

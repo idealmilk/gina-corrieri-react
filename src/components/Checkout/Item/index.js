@@ -40,28 +40,30 @@ const Item = (product) => {
             <img src={productThumbnail} alt={productName} />
           </td>
           <td>
-            {productName}
+            <p>{productName}</p>
           </td>
           <td>
-            <span className="cartBtn"
-              onClick={() => handleReduceItem(product)}>
-              {`< `}
-            </span>
-            <span>
-              {quantity}
-            </span>
-            <span className="cartBtn"
-              onClick={() => handleAddProduct(product)}>
-              {` >`}
-            </span>
+            <p>
+              <span className="cartBtn"
+                onClick={() => handleReduceItem(product)}>
+                {`< `}
+              </span>
+              <span>
+                {quantity}
+              </span>
+              <span className="cartBtn"
+                onClick={() => handleAddProduct(product)}>
+                {` >`}
+              </span>
+            </p>
           </td>
           <td>
-            £{productPrice}
+            <p>£{productPrice}</p>
           </td>
           <td align="center">
-            <span className="cartBtn remove" onClick={() => handleRemoveCartItem(documentID)}>
-              X
-            </span>
+            <p onClick={() => handleRemoveCartItem(documentID)}>
+              Remove
+            </p>
           </td>
         </tr>
       </tbody>
