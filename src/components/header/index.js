@@ -5,7 +5,7 @@ import { signOutUserStart } from './../../redux/User/user.actions';
 import { selectCartItemsCount } from './../../redux/Cart/cart.selectors';
 import './styles.scss';
 
-import Logo from './../../assets/logo.png';
+import Logo from './../../assets/transparency_logo.gif';
 import AdminToolbar from './../AdminToolbar';
 
 const mapState = (state) => ({

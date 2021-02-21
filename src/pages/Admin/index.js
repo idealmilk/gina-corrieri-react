@@ -20,6 +20,10 @@ const Admin = props => {
   const [productCategory, setProductCategory] = useState('tshirt');
   const [productName, setProductName] = useState('');
   const [productThumbnail, setProductThumbnail] = useState('');
+  const [productImage1, setProductImage1] = useState('');
+  const [productImage2, setProductImage2] = useState('');
+  const [productImage3, setProductImage3] = useState('');
+  const [productImage4, setProductImage4] = useState('');
   const [productSize, setProductSize] = useState('');
   const [productStyle, setProductStyle] = useState('');
   const [productColour, setProductColour] = useState('');
@@ -53,6 +57,10 @@ const Admin = props => {
     setProductCategory('mens');
     setProductName('');
     setProductThumbnail('');
+    setProductImage1('');
+    setProductImage2('');
+    setProductImage3('');
+    setProductImage4('');
     setProductSize('');
     setProductStyle('');
     setProductColour('');
@@ -75,6 +83,10 @@ const Admin = props => {
         productCategory,
         productName,
         productThumbnail,
+        productImage1,
+        productImage2,
+        productImage3,
+        productImage4,
         productSize,
         productStyle,
         productColour,
@@ -154,6 +166,34 @@ const Admin = props => {
               type="url"
               value={productThumbnail}
               handleChange={e => setProductThumbnail(e.target.value)}
+            />
+
+            <FormInput
+              label="Image 1 URL"
+              type="url"
+              value={productImage1}
+              handleChange={e => setProductImage1(e.target.value)}
+            />
+
+            <FormInput
+              label="Image 2 URL"
+              type="url"
+              value={productImage2}
+              handleChange={e => setProductImage2(e.target.value)}
+            />
+
+            <FormInput
+              label="Image 3 URL"
+              type="url"
+              value={productImage3}
+              handleChange={e => setProductImage3(e.target.value)}
+            />
+
+            <FormInput
+              label="Image 4 URL"
+              type="url"
+              value={productImage4}
+              handleChange={e => setProductImage4(e.target.value)}
             />
 
             <FormInput
