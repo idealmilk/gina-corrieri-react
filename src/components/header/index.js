@@ -9,97 +9,97 @@ import Logo from './../../assets/transparency_logo.gif';
 import AdminToolbar from './../AdminToolbar';
 
 const mapState = (state) => ({
-  currentUser: state.user.currentUser,
-  totalNumCartItems: selectCartItemsCount(state)
+	currentUser: state.user.currentUser,
+	totalNumCartItems: selectCartItemsCount(state)
 });
 
 const Header = props => {
-  const location = useLocation();
-  const [activeMenu, setActiveMenu] = useState(false);
-  const dispatch = useDispatch();
-  const { currentUser, totalNumCartItems } = useSelector(mapState);
+	const location = useLocation();
+	const [activeMenu, setActiveMenu] = useState(false);
+	const dispatch = useDispatch();
+	const { currentUser, totalNumCartItems } = useSelector(mapState);
 
-  const signOut = () => {
-    dispatch(signOutUserStart());
-  };
+	const signOut = () => {
+		dispatch(signOutUserStart());
+	};
 
-  useEffect(() => {
-    setActiveMenu(false);
-  }, [location]);
+	useEffect(() => {
+		setActiveMenu(false);
+	}, [location]);
 
-  return (
-    <div className="header">
-      <AdminToolbar />
-      <header className="headerMain">
-        <div className="wrap">
-          <div className="logo">
-            <Link to="/">
-              <img src={Logo} alt="SimpleTut LOGO" />
-            </Link>
-          </div>
+	return (
+		<div className="header">
+			<AdminToolbar />
+			<header className="headerMain">
+				<div className="wrap">
+					<div className="logo">
+						<Link to="/">
+							<img src={Logo} alt="SimpleTut LOGO" />
+						</Link>
+					</div>
 
-          <nav className={`mainMenu ${activeMenu ? 'active' : ''}`}>
-            <ul>
-              <li>
-                <Link to="/shop">
-                  Shop
-                </Link>
-              </li>
-              <li>
-                <Link to="/about">
-                  About
-                </Link>
-              </li>
-            </ul>
-          </nav>
+					<nav className={`mainMenu ${activeMenu ? 'active' : ''}`}>
+						<ul>
+						<li>
+							<Link to="/shop">
+							Shop
+							</Link>
+						</li>
+						<li>
+							<Link to="/about">
+							About
+							</Link>
+						</li>
+						</ul>
+					</nav>
 
-          <div className="callToActions">
+				<div className="callToActions">
 
-            <ul>
+					<ul>
 
-              <li className="cart">
-                <Link to="/cart">
-                  Cart <span className="cartSize">0{totalNumCartItems}</span>
-                </Link>
-              </li>
+					<li className="cart">
+						<Link to="/cart">
+						Cart <span className="cartSize">0{totalNumCartItems}</span>
+						</Link>
+					</li>
 
-              {currentUser && [
-                <li key={1}>
-                  <Link to="/dashboard">
-                    My Account
-                    <i className="fas fa-user-circle"></i>
-                  </Link>
-                </li>,
-                <li key={2}>
-                  <span onClick={() => signOut()}>
-                    LogOut
-                    <i className="fas fa-sign-out-alt"></i>
-                  </span>
-                </li>
-              ]}
+					{currentUser && [
+						<li key={1}>
+						<Link to="/dashboard">
+							My Account
+							<i className="fas fa-user-circle"></i>
+						</Link>
+						</li>,
+						<li key={2}>
+						<span onClick={() => signOut()}>
+							LogOut
+							<i className="fas fa-sign-out-alt"></i>
+						</span>
+						</li>
+					]}
 
-              {!currentUser && [
-                <li key={2}>
-                  <Link to="/login">
-                    Login
-                    <i className="fas fa-user-circle"></i>
-                  </Link>
-                </li>
-              ]}
+					{!currentUser && [
+						<li key={2}>
+						<Link to="/login">
+							Login
+							<i className="fas fa-user-circle"></i>
+						</Link>
+						</li>
+					]}
 
-              <li className="mobileMenu">
-                <span onClick={() => setActiveMenu(!activeMenu)}>
-                  <i className="fas fa-bars"></i>
-                </span>
-              </li>
+					<li className="mobileMenu">
+						<span onClick={() => setActiveMenu(!activeMenu)}>
+						<i className="fas fa-bars"></i>
+						</span>
+					</li>
 
-            </ul>
+					</ul>
 
-          </div>
-        </div>
-      </header>
-    </div>
-  );
+				</div>
+				</div>
+			</header>
+		</div>
+	);
 };
 
 Header.defaultProps = {
