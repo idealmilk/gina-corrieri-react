@@ -101,22 +101,22 @@ const ProductCard = ({}) => {
           </li>
           <li>
             <span>
-            Style: {productStyle}
+              <strong>Style:</strong> {productStyle}
             </span>
           </li>
           <li>
             <span>
-            Colour: {productColour}
+              <strong>Colour:</strong> {productColour}
             </span>
           </li>
           <li>
             <span>
-              Available in size {productSize}
+              <strong>Available in size:</strong> {productSize}
             </span>
           </li>
           <li>
             <span>
-              Measurements +
+              <strong>Measurements +</strong>
             </span>
           </li>
         </ul>
