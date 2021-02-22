@@ -42,12 +42,8 @@ const SignIn = props => {
     dispatch(googleSignInStart());
   }
 
-  const configAuthWrapper = {
-    headline: 'LogIn'
-  };
-
   return (
-    <AuthWrapper {...configAuthWrapper}>
+    <AuthWrapper >
       <div className="formWrap">
         <form onSubmit={handleSubmit}>
 

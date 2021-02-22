@@ -40,12 +40,8 @@ const EmailPassword = props => {
     dispatch(resetPasswordStart({ email }));
   }
 
-  const configAuthWrapper = {
-    headline: 'Email Password'
-  };
-
   return (
-    <AuthWrapper {...configAuthWrapper}>
+    <AuthWrapper >
       <div className="formWrap">
 
         {errors.length > 0 && (
@@ -71,12 +67,12 @@ const EmailPassword = props => {
           />
 
           <Button type="submit">
-            Email Password
+            Send Recovery Email
           </Button>
 
         </form>
 
-        <div className="links">
+        {/* <div className="links">
           <Link to="/login">
             LogIn
           </Link>
@@ -84,7 +80,7 @@ const EmailPassword = props => {
           <Link to="/registration">
             Register
           </Link>
-        </div>
+        </div> */}
 
       </div>
     </AuthWrapper>

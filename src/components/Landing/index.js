@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Phenomena from './../../assets/phenomena.mp4';
-import PhenomenaLogo from './../../assets/phenomena_minimal.png';
+import PhenomenaLogo from './../../assets/phenomena.png';
 import './styles.scss';
 
 const Landing = props => {
