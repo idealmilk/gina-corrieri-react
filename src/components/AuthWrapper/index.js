@@ -11,7 +11,6 @@ const AuthWrapper = ({ headline, children }) => {
           {children && children}
         </div>
       </div>
-      <div className="background"></div>
     </div>
   );
 }
