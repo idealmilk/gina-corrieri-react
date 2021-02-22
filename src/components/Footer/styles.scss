@@ -4,7 +4,7 @@
   bottom: 0;
   width: 100%;
   z-index: 1;
-  
+
   .footerMain {
     height: 6.5rem;
     width: 100%;
@@ -21,18 +21,23 @@
       font-size: 2rem;
       text-transform: uppercase;
 
-      .info, .instagram {
+      .info,
+      .contact {
         position: absolute;
-        top: 50%; 
+        top: 50%;
         transform: translateY(-50%);
       }
-  
-      .instagram {
+
+      .contact {
         right: 0;
+
+        .email {
+          margin-right: 10px;
+        }
 
         a {
           color: black;
-  
+
           &:hover {
             color: lime;
           }

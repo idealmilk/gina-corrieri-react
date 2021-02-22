@@ -9,7 +9,12 @@ const Footer = props => {
           <div className="info">
             Gina Corrieri
           </div>
-          <div className="instagram">
+          <div className="contact">
+            <a 
+              href = "mailto: info@ginacorrieri.com"
+              className="email">
+                Contact
+            </a>
             <a 
               href="https://www.instagram.com/ginacorrieri_" 
               target="_blank" 
