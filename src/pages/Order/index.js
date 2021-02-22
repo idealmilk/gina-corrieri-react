@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOrderDetailsStart } from './../../redux/Orders/orders.actions';
 import { useDispatch, useSelector } from 'react-redux';
+import MetaDecorator from './../../components/MetaDecorator';
 import OrderDetails from './../../components/OrderDetails';
 
 const mapState = ({ ordersData }) => ({
@@ -24,6 +25,10 @@ const Order = () => {
 
   return (
     <div>
+      <MetaDecorator
+        title="Order History | Gina Corrieri"
+        description="Gina Corrieri is an independent designer and reworker based in London."
+      />
 
       <h1>
         Order ID: #{orderID}

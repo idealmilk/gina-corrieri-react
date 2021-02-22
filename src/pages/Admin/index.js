@@ -8,6 +8,7 @@ import Button from './../../components/forms/Button';
 import LoadMore from './../../components/LoadMore';
 import CKEditor from 'ckeditor4-react';
 import './styles.scss';
+import MetaDecorator from './../../components/MetaDecorator';
 
 const mapState = ({ productsData }) => ({
   products: productsData.products
@@ -120,6 +121,10 @@ const Admin = props => {
 
   return (
     <div className="admin">
+      <MetaDecorator
+        title="Admin | Gina Corrieri"
+        description="Gina Corrieri is an independent designer and reworker based in London."
+      />
 
       <div className="callToActions">
         <ul>

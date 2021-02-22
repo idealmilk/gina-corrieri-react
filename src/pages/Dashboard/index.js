@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserOrderHistory } from './../../redux/Orders/orders.actions';
 import OrderHistory from './../../components/OrderHistory';
 import './styles.scss';
+import MetaDecorator from './../../components/MetaDecorator';
 
 const mapState = ({ user, ordersData }) => ({
   currentUser: user.currentUser,
@@ -22,6 +23,10 @@ const Dashboard = props => {
 
   return (
     <div>
+      <MetaDecorator
+        title="Order History | Gina Corrieri"
+        description="Gina Corrieri is an independent designer and reworker based in London."
+      />
       <h1>
         Order History
       </h1>
