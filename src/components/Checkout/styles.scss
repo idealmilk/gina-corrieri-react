@@ -92,6 +92,10 @@
   .cartBtn {
     cursor: pointer;
   }
+
+  .cartBtnInactive {
+    color: lightgray;
+  }
 }
 
 @media only screen and (max-width: 980px) {

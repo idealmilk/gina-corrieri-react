@@ -51,8 +51,8 @@ const Item = (product) => {
               <span>
                 {quantity}
               </span>
-              <span className="cartBtn"
-                onClick={() => handleAddProduct(product)}>
+              <span className="cartBtnInactive">
+                {/* onClick={() => handleAddProduct(product)} */}
                 {` >`}
               </span>
             </p>
