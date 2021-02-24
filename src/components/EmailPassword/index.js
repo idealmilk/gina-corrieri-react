@@ -67,7 +67,7 @@ const EmailPassword = props => {
           />
 
           <Button type="submit">
-            Send Recovery Email
+            Send Reset Email
           </Button>
 
         </form>

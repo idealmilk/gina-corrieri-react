@@ -19,7 +19,7 @@ import About from './pages/About';
 import Shop from './pages/Shop';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
-import Recovery from './pages/Recovery';
+import Reset from './pages/Reset';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 import Product from './pages/Product';
@@ -87,9 +87,9 @@ const App = props => {
               <Login />
             </MainLayout>
           )} />
-        <Route path="/recovery" render={() => (
+        <Route path="/Reset" render={() => (
           <MainLayout>
-            <Recovery />
+            <Reset />
           </MainLayout>
         )} />
         <Route path="/dashboard" render={() => (
