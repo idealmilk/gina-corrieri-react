@@ -122,8 +122,8 @@ const ProductCard = ({}) => {
             </span>
           </li>
           <li>
-            <Collapsible trigger={open ? 'Measurements   -' : 'Measurements   +'}
-                {...{ open, handleTriggerClick }}>
+            <Collapsible trigger={<p>Measurements   <span className="trigger">{open ? '-' : '+'}</span></p>}
+                {...{ open, handleTriggerClick }} overflowWhenOpen="visible">
               <p>
                 {productNeckline > 0 ? `Neckline: ${productNeckline}` : ''}
               </p>
