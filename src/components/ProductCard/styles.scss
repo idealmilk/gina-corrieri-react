@@ -91,3 +91,21 @@
     cursor: pointer;
   }
 }
+
+.collapsible {
+  cursor: pointer;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  color: lime;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.measurements {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}

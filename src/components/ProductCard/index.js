@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import Collapsible from 'react-collapsible';
 import { fetchProductStart, setProduct } from './../../redux/Products/products.actions';
 import { selectCartItems } from './../../redux/Cart/cart.selectors';
 import { addProduct } from './../../redux/Cart/cart.actions';
@@ -82,6 +83,12 @@ const ProductCard = ({}) => {
     };
   };
 
+  const [open, setOpen] = useState(false);
+
+  const handleTriggerClick = () => {
+    setOpen(!open);
+  };
+
   return (
     <div className="productCard">
       <div className="hero">
@@ -115,9 +122,27 @@ const ProductCard = ({}) => {
             </span>
           </li>
           <li>
-            <span>
-              <strong>Measurements +</strong>
-            </span>
+            <Collapsible trigger={open ? 'Measurements   -' : 'Measurements   +'}
+                {...{ open, handleTriggerClick }}>
+              <p>
+                {productNeckline > 0 ? `Neckline: ${productNeckline}` : ''}
+              </p>
+              <p>
+                {productLength > 0 ? `Length: ${productLength}` : ''}
+              </p>
+              <p>
+                {productWidth > 0 ? `Width: ${productWidth}` : ''}
+              </p>
+              <p>
+                {productShoulder > 0 ? `Shoulder: ${productShoulder}` : ''}
+              </p>
+              <p>
+                {productArmhole > 0 ? `Armhole: ${productArmhole}` : ''}
+              </p>
+              <p>
+                {productWaist > 0 ? `Waist: ${productWaist}` : ''}
+              </p>
+            </Collapsible>
           </li>
         </ul>
       </div>
