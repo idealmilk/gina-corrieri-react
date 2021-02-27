@@ -42,25 +42,20 @@
     line-height: 1.4;
     height: 30%;
 
-    ul,
-    ul li {
-      padding: 0;
-      margin: 0;
+    h1 {
+      margin: 0 0 20px 0;
+      font-size: 5.3rem;
+      font-family: Teko;
     }
 
-    ul li {
+    .desc {
+      font-size: 1.8rem;
+      margin: 0 0 20px 0;
+    }
+
+    p {
       list-style-type: none;
-      margin: 0 auto 1rem;
-
-      h1 {
-        margin: 0;
-        font-size: 5.3rem;
-        font-family: Teko;
-      }
-
-      .desc {
-        font-size: 2rem;
-      }
+      margin: 0 auto 0.5rem;
     }
   }
 
