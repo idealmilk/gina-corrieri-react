@@ -92,7 +92,7 @@ const ProductCard = ({}) => {
   return (
     <div className="productCard">
       <div className="hero">
-        <img src={productThumbnail} />
+        <img src={productThumbnail} alt={productName} />
       </div>
       <div className="productDetails">
         <ul>

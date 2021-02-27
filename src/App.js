@@ -12,6 +12,7 @@ import MainLayout from './layouts/MainLayout';
 import HomepageLayout from './layouts/HomepageLayout';
 import AdminLayout from './layouts/AdminLayout';
 import DashboardLayout from './layouts/DashboardLayout';
+import ProductLayout from './layouts/ProductLayout';
 
 // pages
 import Homepage from './pages/Homepage';
@@ -60,9 +61,9 @@ const App = props => {
           </MainLayout>
         )} />
         <Route path="/product/:productID" render={() => (
-          <MainLayout>
+          <ProductLayout>
             <Product />
-          </MainLayout>
+          </ProductLayout>
         )} />
         <Route path="/cart" render={() => (
           <MainLayout>
