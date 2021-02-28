@@ -21,7 +21,7 @@ import Shop from './pages/Shop';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Reset from './pages/Reset';
-import Dashboard from './pages/Dashboard';
+import Orders from './pages/Orders';
 import Admin from './pages/Admin';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
@@ -93,11 +93,11 @@ const App = props => {
             <Reset />
           </MainLayout>
         )} />
-        <Route path="/dashboard" render={() => (
+        <Route path="/orders" render={() => (
           <WithAuth>
-            <DashboardLayout>
-              <Dashboard />
-            </DashboardLayout>
+            <MainLayout>
+              <Orders />
+            </MainLayout>
           </WithAuth>
         )} />
         <Route path="/order/:orderID" render={() => (

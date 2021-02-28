@@ -17,7 +17,7 @@ const columns = [
   },
   {
     id: 'orderTotal',
-    lable: 'Amount'
+    lable: 'Total'
   }
 ];
 

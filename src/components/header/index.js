@@ -69,7 +69,7 @@ const Header = props => {
 								<div class="dropbtn">Account</div>
 								<div class="dropdown-content">
 
-									<Link to="/dashboard">
+									<Link to="/orders">
 										Order History
 										<i className="fas fa-user-circle"></i>
 									</Link>
