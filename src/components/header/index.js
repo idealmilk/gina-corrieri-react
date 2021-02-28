@@ -59,23 +59,28 @@ const Header = props => {
 
 					<li className="cart">
 						<Link to="/cart">
-						Cart <span className="cartSize">0{totalNumCartItems}</span>
+							Cart <span className="cartSize">0{totalNumCartItems}</span>
 						</Link>
 					</li>
 
 					{currentUser && [
 						<li key={1}>
-						<Link to="/dashboard">
-							My Account
-							<i className="fas fa-user-circle"></i>
-						</Link>
-						</li>,
-						<li key={2}>
-						<span onClick={() => signOut()}>
-							LogOut
-							<i className="fas fa-sign-out-alt"></i>
-						</span>
-						</li>
+							<div className="dropdown">
+								<div class="dropbtn">Account</div>
+								<div class="dropdown-content">
+
+									<Link to="/dashboard">
+										Order History
+										<i className="fas fa-user-circle"></i>
+									</Link>
+
+									<span onClick={() => signOut()}>
+										LogOut
+										<i className="fas fa-sign-out-alt"></i>
+									</span>
+								</div>
+							</div>
+					  	</li>
 					]}
 
 					{!currentUser && [
