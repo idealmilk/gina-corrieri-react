@@ -9,7 +9,7 @@ import { setOrderDetails } from './../../redux/Orders/orders.actions';
 const columns = [
   {
     id: 'productThumbnail',
-    label: ''
+    label: 'Product'
   },
   {
     id: 'productName',
@@ -27,7 +27,7 @@ const columns = [
 
 const styles = {
   fontSize: '16px',
-  width: '10%'
+  width: '20%'
 };
 
 const formatText = (columnName, columnValue) => {
@@ -35,7 +35,7 @@ const formatText = (columnName, columnValue) => {
     case 'productPrice':
       return `£${columnValue}`;
     case 'productThumbnail':
-      return <img src={columnValue} width={250} />;
+      return <img src={columnValue} width={75} />;
     default:
       return columnValue;
   }

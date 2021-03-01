@@ -77,7 +77,7 @@ const PaymentDetails = () => {
     }
 
     apiInstance.post('/payments/create', {
-      amount: (total + 2.50) * 100,
+      amount: (total + 2.75) * 100,
       shipping: {
         name: recipientName,
         address: {
@@ -103,7 +103,7 @@ const PaymentDetails = () => {
         .then(({ paymentIntent }) => {
 
           const configOrder = {
-            orderTotal: total + 2.50,
+            orderTotal: total + 2.75,
             orderItems: cartItems.map(item => {
               const { documentID, productThumbnail, productName,
                 productPrice, quantity } = item;

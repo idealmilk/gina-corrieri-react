@@ -102,9 +102,9 @@ const App = props => {
         )} />
         <Route path="/order/:orderID" render={() => (
           <WithAuth>
-            <DashboardLayout>
+            <MainLayout>
               <Order />
-            </DashboardLayout>
+            </MainLayout>
           </WithAuth>
         )} />
         <Route path="/admin" render={() => (
