@@ -40,7 +40,7 @@ const PaymentDetails = () => {
 
   useEffect(() => {
     if (itemCount < 1) {
-      history.push('/dashboard');
+      history.push('/orders');
     }
 
   }, [itemCount]);
