@@ -6,8 +6,12 @@
   z-index: -2;
 
   .hero {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
     .video {
-      margin: 0;
+      margin: 60px 0;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -29,8 +33,18 @@
   }
 
   .copy {
-    width: 400px;
+    max-width: 600px;
+    -webkit-transform: translateY(120px);
+    transform: translateY(120px);
     margin: 0 auto;
+    text-align: center;
+
+    p {
+      margin-bottom: 20px;
+      font-size: 2.1rem;
+      font-family: Texturina;
+      line-height: 1.2;
+    }
   }
 }
 
