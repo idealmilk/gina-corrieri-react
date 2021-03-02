@@ -18,6 +18,7 @@ import ProductLayout from './layouts/ProductLayout';
 import Homepage from './pages/Homepage';
 import About from './pages/About';
 import Shop from './pages/Shop';
+import Features from './pages/Features';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Reset from './pages/Reset';
@@ -53,6 +54,11 @@ const App = props => {
         <Route exact path="/shop" render={() => (
           <MainLayout>
             <Shop />
+          </MainLayout>
+        )} />
+        <Route exact path="/features" render={() => (
+          <MainLayout>
+            <Features />
           </MainLayout>
         )} />
         <Route path="/shop/:filterType" render={() => (
