@@ -7,14 +7,13 @@ const Footer = props => {
       <div className="footerMain">
         <div className="wrap">
           <div className="info">
-            Gina Corrieri
-          </div>
-          <div className="contact">
             <a 
               href = "mailto: info@ginacorrieri.com"
               className="email">
                 Contact
             </a>
+          </div>
+          <div className="contact">
             <a 
               href="https://www.instagram.com/ginacorrieri_" 
               target="_blank" 
