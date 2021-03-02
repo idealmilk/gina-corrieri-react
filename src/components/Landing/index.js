@@ -7,7 +7,7 @@ import './styles.scss';
 const Landing = props => {
   return (
     <div className="landing">
-      <div className="wrap">
+      <div className="hero">
         <video className='video' autoPlay loop muted>
           <source src={Phenomena} type='video/mp4' />
         </video>
