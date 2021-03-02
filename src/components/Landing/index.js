@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Phenomena from './../../assets/phenomena.mp4';
 import PhenomenaLogo from './../../assets/phenomena.png';
 import './styles.scss';
+import Gallery from './Gallery';
 
 const Landing = props => {
   return (
@@ -23,6 +24,7 @@ const Landing = props => {
         <p>I USE HEAT AS A METAPHOR FOR DEFIANCE.</p>
         <p>THE FABRIC IS UNIQUE TO EACH PIECE, AND CANNOT BE REPLICATED.</p>
       </div>
+      <Gallery />
     </div>
   );
 };
