@@ -1,0 +1,26 @@
+.features {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+  transform: translateY(150px);
+  -ms-transform: translateY(150px);
+
+  .feature {
+    margin-bottom: 60px;
+
+    p {
+      font-size: 2rem;
+      line-height: 1.2;
+      font-family: Texturina;
+    }
+
+    .styledBy {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    iframe {
+      margin-top: 30px;
+    }
+  }
+}

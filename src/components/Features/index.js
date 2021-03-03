@@ -33,7 +33,11 @@ const features = [
 const Features = props => {
   return (
     <div className="features">
-      <Feature />
+      {features.map((feature, pos) => {
+        return (
+            <Feature key={pos} {...feature} />
+        )
+      })}
     </div>
   );
 }
