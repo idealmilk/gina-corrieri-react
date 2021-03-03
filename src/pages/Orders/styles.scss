@@ -7,3 +7,9 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+@media only screen and (max-width: 900px) {
+  .orders {
+    width: 90%;
+  }
+}
