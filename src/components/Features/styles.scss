@@ -24,3 +24,16 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .features {
+    transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    .feature {
+      iframe {
+        width: 100%;
+        height: 250px;
+      }
+    }
+  }
+}
