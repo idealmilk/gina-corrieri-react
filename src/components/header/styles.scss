@@ -101,6 +101,10 @@
               top: 0;
               padding-left: 2px;
               font-size: 1.4rem;
+
+              &:hover {
+                color: black !important;
+              }
             }
           }
 
