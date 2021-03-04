@@ -1,7 +1,6 @@
 import React from 'react';
 import ScrollHorizontal from 'react-scroll-horizontal';
 
-import './styles.scss';
 import Image1 from './../../../assets/Phenomena/IMG_0505.jpg'
 import Image2 from './../../../assets/Phenomena/IMG_0698.jpg'
 import Image3 from './../../../assets/Phenomena/IMG_0766.jpg'
