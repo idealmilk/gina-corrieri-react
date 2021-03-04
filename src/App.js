@@ -30,6 +30,9 @@ import Payment from './pages/Payment';
 import Order from './pages/Order';
 import './default.scss';
 
+//hooks
+import ScrollToTop from './customHooks/scrollToTop.js';
+
 const App = props => {
   const dispatch = useDispatch();
 
@@ -40,6 +43,7 @@ const App = props => {
 
   return (
     <div className="App">
+      <ScrollToTop />
       <Switch>
         <Route exact path="/" render={() => (
           <HomepageLayout>
