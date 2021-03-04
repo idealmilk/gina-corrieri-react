@@ -24,7 +24,7 @@ const Landing = props => {
         <p>I USE HEAT AS A METAPHOR FOR DEFIANCE.</p>
         <p>THE FABRIC IS UNIQUE TO EACH PIECE, AND CANNOT BE REPLICATED.</p>
       </div>
-      <Gallery />
+      <Gallery className="gallery" />
     </div>
   );
 };

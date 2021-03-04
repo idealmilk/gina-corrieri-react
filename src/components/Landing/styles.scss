@@ -1,7 +1,5 @@
 .landing {
   height: 100%;
-  max-width: 1350px;
-  width: 1350px;
   margin: 0 auto;
   z-index: -2;
 
@@ -36,7 +34,7 @@
     max-width: 600px;
     -webkit-transform: translateY(120px);
     transform: translateY(120px);
-    margin: 0 auto;
+    margin: 0 auto 200px auto;
     text-align: center;
 
     p {
@@ -45,6 +43,11 @@
       font-family: Texturina;
       line-height: 1.2;
     }
+  }
+
+  .gallery {
+    -webkit-transform: translateY(120px);
+    transform: translateY(120px);
   }
 }
 
