@@ -93,13 +93,16 @@ const ProductCard = ({}) => {
 		setOpen(!open);
 	};
 
-	const images = [productImage1, productImage2, productImage3, productImage4]
+	const productImage0 = null;
+	const productImage5 = null;
+
+	const images = [productImage0, productImage1, productImage2, productImage3, productImage4, productImage5]
 
 	const productImages = images.map((image, pos) => {
 		if (image) {
 			return <img alt={pos} key={pos} src={image} className="productImage" />
 		} else {
-			return null
+			return <div className="emptySpace"></div>
 		}
 
 	})
@@ -155,7 +158,7 @@ const ProductCard = ({}) => {
 					{addToCart()}
 				</div>
 			</div>
-			<ScrollHorizontal reverseScroll = { true } className="horizontalScroll">
+			<ScrollHorizontal  reverseScroll = { true }>
             	{productImages}
         	</ScrollHorizontal>
 		</div>
