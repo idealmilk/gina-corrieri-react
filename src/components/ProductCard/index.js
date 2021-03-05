@@ -3,6 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import Collapsible from 'react-collapsible';
+import ScrollHorizontal from 'react-scroll-horizontal';
 import { fetchProductStart, setProduct } from './../../redux/Products/products.actions';
 import { selectCartItems } from './../../redux/Cart/cart.selectors';
 import { addProduct } from './../../redux/Cart/cart.actions';
@@ -26,6 +27,10 @@ const ProductCard = ({}) => {
 
 	const {
 		productThumbnail,
+		productImage1,
+		productImage2,
+		productImage3,
+		productImage4,
 		productName,
 		productPrice,
 		productDesc,
@@ -88,6 +93,17 @@ const ProductCard = ({}) => {
 		setOpen(!open);
 	};
 
+	const images = [productImage1, productImage2, productImage3, productImage4]
+
+	const productImages = images.map((image, pos) => {
+		if (image) {
+			return <img alt={pos} key={pos} src={image} className="productImage" />
+		} else {
+			return null
+		}
+
+	})
+
 	return (
 		<div className="productCard">
 			<div className="hero">
@@ -139,6 +155,9 @@ const ProductCard = ({}) => {
 					{addToCart()}
 				</div>
 			</div>
+			<ScrollHorizontal reverseScroll = { true } className="horizontalScroll">
+            	{productImages}
+        	</ScrollHorizontal>
 		</div>
 	);
 }

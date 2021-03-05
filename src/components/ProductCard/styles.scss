@@ -57,6 +57,10 @@
       list-style-type: none;
       margin: 0 auto 0.5rem;
     }
+
+    .productImage {
+      height: 300px;
+    }
   }
 
   .buy {
@@ -85,6 +89,10 @@
     border: 0;
     outline: none;
     cursor: pointer;
+  }
+
+  .horizontalScroll {
+    z-index: -1;
   }
 }
 
