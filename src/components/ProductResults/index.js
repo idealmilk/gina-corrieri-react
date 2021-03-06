@@ -50,6 +50,8 @@ const ProductResults = ({ }) => {
         );
     }
 
+    data.sort((a, b) => parseFloat(b.productQuantity) - parseFloat(a.productQuantity))
+
     return (
         <div className="productResults">
             {filter}

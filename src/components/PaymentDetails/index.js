@@ -119,7 +119,7 @@ const PaymentDetails = () => {
               };
             })
           }
-          cartItems.forEach(product => firestore.collection('products').doc(product.documentID).update({productQuantity: product.documentID -1}));
+          cartItems.forEach(product => firestore.collection('products').doc(product.documentID).update({productQuantity: 0}));
 
           dispatch(
             saveOrderHistory(configOrder)
