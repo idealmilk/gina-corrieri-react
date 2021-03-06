@@ -5,11 +5,13 @@ import Button from './../forms/Button';
 import { CountryDropdown } from 'react-country-region-selector';
 import { apiInstance } from './../../Utils';
 import { selectCartTotal, selectCartItemsCount, selectCartItems } from './../../redux/Cart/cart.selectors';
+import { updateQuantityStart } from './../../redux/Products/products.actions';
 import { saveOrderHistory } from './../../redux/Orders/orders.actions';
 import { clearCart } from './../../redux/Cart/cart.actions';
 import { createStructuredSelector } from 'reselect';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { firestore } from './../../firebase/utils';
 import './styles.scss';
 
 const initialAddressState = {
@@ -117,10 +119,13 @@ const PaymentDetails = () => {
               };
             })
           }
+          cartItems.forEach(product => firestore.collection('products').doc(product.documentID).update({productQuantity: product.documentID -1}));
 
           dispatch(
             saveOrderHistory(configOrder)
           );
+
+          
         });
 
       })

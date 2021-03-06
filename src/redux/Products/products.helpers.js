@@ -67,6 +67,25 @@ export const handleDeleteProduct = documentID => {
   });
 }
 
+export const handleUpdateQuantity = payload => {
+  const { documentID, productQuantity } = payload
+
+  return new Promise((resolve, reject) => {
+    firestore
+      .collection('products')
+      .doc(documentID)
+      .update({
+        productQuantity: productQuantity - 1
+      })
+      .then(() => {
+        resolve();
+      })
+      .catch(err => {
+        reject(err);
+      })
+  });
+}
+
 export const handleFetchProduct = (productID) => {
   return new Promise((resolve, reject) => {
     firestore
