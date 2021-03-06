@@ -29,11 +29,16 @@ const mapState = createStructuredSelector({
   cartItems: selectCartItems,
 });
 
+const mapUserState = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
 const PaymentDetails = () => {
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
   const { total, itemCount, cartItems } = useSelector(mapState);
+  const { currentUser } = useSelector(mapUserState);
   const dispatch = useDispatch();
   const [billingAddress, setBillingAddress] = useState({ ...initialAddressState });
   const [shippingAddress, setShippingAddress] = useState({ ...initialAddressState });
@@ -93,6 +98,7 @@ const PaymentDetails = () => {
         card: cardElement,
         billing_details: {
           name: nameOnCard,
+          email: currentUser.email,
           address: {
             ...billingAddress
           }
