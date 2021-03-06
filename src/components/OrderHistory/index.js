@@ -27,12 +27,12 @@ const styles = {
   width: '10%'
 };
 
-const formatText = (columnName, columnValue) => {
+const formatText = (columnName, columnValue, orderCreatedDate) => {
   switch (columnName) {
     case 'orderTotal':
       return `£${parseFloat(columnValue).toFixed(2)}`;
     case 'orderCreatedDate':
-      return moment(columnValue.nano).format('DD/MM/YYYY')
+      return moment.unix(orderCreatedDate.seconds).format('DD/MM/YYYY')
     default:
       return columnValue;
   }
@@ -65,7 +65,7 @@ const OrderHistory = ({ orders }) => {
         <TableBody>
 
           {(Array.isArray(orders) && orders.length > 0) && orders.map((row, pos) => {
-            const { documentID } = row;
+            const { documentID, orderCreatedDate } = row;
 
             return (
               <TableRow
@@ -76,7 +76,7 @@ const OrderHistory = ({ orders }) => {
                 {columns.map((column, pos) => {
                   const columnName = column.id;
                   const columnValue = row[columnName];
-                  const formattedText = formatText(columnName, columnValue);
+                  const formattedText = formatText(columnName, columnValue, orderCreatedDate);
 
                   return (
                     <TableCell
