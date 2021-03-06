@@ -4,6 +4,11 @@ import Feature from './Feature';
 
 const features = [
   {
+    url: "https://www.youtube.com/embed/2nzXBx5TREk",
+    desc: "Ray BLK wearing a custom reworked Adidas look in her music video Games featuring Giggs. Inspired by Run DMC,  and made using entirely secondhand Adidas pieces reworked in panels for a custom fit",
+    styledBy: "Styled by Natalie Michaelides"
+  },
+  {
     url: "https://www.youtube.com/embed/qJhyhaf_uRs",
     desc: "Amaarae wearing Flame trousers in red/yellow in her Colors video of ‘Leave Me Alone’",
     styledBy: "Styled by Natalie Roar and assisted by Emmanouela Megkistou",
