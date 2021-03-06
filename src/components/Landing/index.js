@@ -15,14 +15,14 @@ const Landing = props => {
         <img src={PhenomenaLogo} alt="Phenomena Logo" className="logo"/>
       </div>
       <div className="copy">
-        <p>CLOTHING HAS THE POWER TO MANIFEST YOUR MIND AND VALUES.</p>
-        <p>IN THE 1960s MY MATERNAL GRANDPARENTS LEFT SAN FERNANDO, TRINIDAD TO COME TO <span style={{color: "red"}}>LONDON</span>, ALSO THE CITY WHERE MY ITALIAN PATERNAL GRANDFATHER LIVED WITH MY NORTHERN ENGLISH GRANDMOTHER.</p>
-        <p>IN THE 1980s MY PARENTS MET AT UNIVERSITY, MY DAD WAS A PUNK AND MY MUM LOVED DISCO.</p>
-        <p>MIXTURES AND FUSIONS FEEL NATURAL TO ME, OFTEN MELDING WITH A SENSE OF UNCERTAINTY.</p>
-        <p>I HAVE GROWN UP WONDERING WHERE MY PLACE IN THE WORLD IS.</p>
-        <p>PHENOMENA IS MY WORLD WITHOUT BOUNDARIES. A SURREAL, INCANDESCENT PLACE INSPIRED BY THE LATE 1970s REGGAE SCENE AND ITS INFLUENCE ON PUNK IN LONDON; BOTH WERE ROOTED IN THE CITY EXPERIENCE AND BONDED PEOPLE THROUGH MUSIC AND A SHARED RESISTANCE TO THE SYSTEM.</p>
-        <p>I USE HEAT AS A METAPHOR FOR DEFIANCE.</p>
-        <p>THE FABRIC IS UNIQUE TO EACH PIECE, AND CANNOT BE REPLICATED.</p>
+        <p>Clothing has the power to manifest your mind and values.</p>
+        <p>In the 1960s my maternal grandparents left San Fernando, Trinidad to come to <span style={{color: "red"}}>London</span>, also the city where my Italian paternal grandfather lived with my Northern English grandmother.</p>
+        <p>In the 1980s my parents met at university, my dad was a Punk and my mum loved Disco.</p>
+        <p>Mixtures and fusions feel natural to me, often melding with a sense of uncertainty.</p>
+        <p>I have grown up wondering where my place in the world is.</p>
+        <p><em>Phenomena</em> is my world without boundaries. A surreal, incandescent place inspired by the late 1970s Reggae scene and its influence on Punk in London; both were rooted in the city experience and bonded people through music and a shared resistance to the system.</p>
+        <p>I use heat as a metaphor for defiance.</p>
+        <p>The fabric is unique to each piece, and cannot be replicated.</p>
       </div>
       <Gallery className="gallery" />
     </div>
