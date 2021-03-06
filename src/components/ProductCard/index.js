@@ -37,6 +37,7 @@ const ProductCard = ({}) => {
 		productSize,
 		productStyle,
 		productColour,
+		productHeight,
 		productNeckline,
 		productLength,
 		productWidth,
@@ -133,6 +134,9 @@ const ProductCard = ({}) => {
 					</p>
 					<p>
 						{productLength > 0 ? `Length: ${productLength}` : ''}
+					</p>
+					<p>
+						{productLength > 0 ? `Height: ${productHeight}` : ''}
 					</p>
 					<p>
 						{productWidth > 0 ? `Width: ${productWidth}` : ''}
