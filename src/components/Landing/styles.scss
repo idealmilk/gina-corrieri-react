@@ -32,9 +32,7 @@
 
   .copy {
     max-width: 600px;
-    -webkit-transform: translateY(120px);
-    transform: translateY(120px);
-    margin: 0 auto 200px auto;
+    margin: 120px auto 150px auto;
     text-align: center;
 
     p {
@@ -45,9 +43,9 @@
     }
   }
 
-  .gallery {
-    -webkit-transform: translateY(120px);
-    transform: translateY(120px);
+  .scroll-horizontal {
+    height: 500px !important;
+    width: 100% !important;
   }
 }
 

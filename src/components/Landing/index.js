@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import Phenomena from './../../assets/phenomena.mp4';
 import PhenomenaLogo from './../../assets/phenomena.png';
 import './styles.scss';
 import Gallery from './Gallery';
 
 const Landing = props => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <div className="landing">
       <div className="hero">
@@ -14,7 +20,7 @@ const Landing = props => {
         </video>
         <img src={PhenomenaLogo} alt="Phenomena Logo" className="logo"/>
       </div>
-      <div className="copy">
+      <div className="copy" data-aos="fade-up">
         <p>Clothing has the power to manifest your mind and values.</p>
         <p>In the 1960s my maternal grandparents left San Fernando, Trinidad to come to <span style={{color: "red"}}>London</span>, also the city where my Italian paternal grandfather lived with my Northern English grandmother.</p>
         <p>In the 1980s my parents met at university, my dad was a Punk and my mum loved Disco.</p>
@@ -24,7 +30,7 @@ const Landing = props => {
         <p>I use heat as a metaphor for defiance.</p>
         <p>The fabric is unique to each piece, and cannot be replicated.</p>
       </div>
-      <Gallery className="gallery" />
+      <Gallery />
     </div>
   );
 };
