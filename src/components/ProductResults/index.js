@@ -34,6 +34,9 @@ const ProductResults = ({ }) => {
                     {filterType === "tshirt" ? "T Shirts" : <a href="/shop/tshirt">T Shirts</a>}
                 </p>
                 <p>
+                    {filterType === "hoodie" ? "Hoodies" : <a href="/shop/hoodies">Hoodies</a>}
+                </p>
+                <p>
                     {filterType === "bag" ? "Bags" : <a href="/shop/bag">Bags</a>}
                 </p>
             </div>

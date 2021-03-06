@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './../components/Header';
 import Footer from './../components/Footer';
-import FullPageLoader from '../components/FullPageLoader';
 
 const MainLayout = props => {
   return (
@@ -16,7 +15,6 @@ const MainLayout = props => {
         {props.children}
       </div>
       <Footer />
-      <FullPageLoader />
     </div>
   );
 };
