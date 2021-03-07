@@ -22,3 +22,5 @@ yarn-error.log*
 *.mp4
 
 src/stripe/config.js
+src/firebase/config.js
+/functions

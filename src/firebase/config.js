@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyAmpfj8PUDJR7mTZveboXQnZctTBaGr_EI",
+  authDomain: "gina-corrieri.firebaseapp.com",
+  projectId: "gina-corrieri",
+  storageBucket: "gina-corrieri.appspot.com",
+  messagingSenderId: "250907813726",
+  appId: "250907813726:web:abea97ed250f66582b91cf",
+  measurementId: "G-ESVF126GL1"
 };

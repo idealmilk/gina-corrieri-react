@@ -6,11 +6,10 @@ const AboutInfo = ({ headline, children }) => {
         <div className="aboutInfo">
             <div className="wrap">
                 <div className="body">
-                    <p>Gina Corrieri is an independent designer and reworker based in London.</p>
-                    <p>Gina works to the belief that clothing manifests your mind. Expressing emotions through layering vibrancy, or stripping back tones, selecting colours and symbols with care to construct new chapters for the existing story of each material.</p>
-                    <p>From a combination of influences - her multicultural heritage, working with colour as an expression of mood, and the euphoria of music and dance - Gina uses primarily recycled materials to create one-off pieces.</p>
-                    <p>Made for all, but with the intention that no wearer is the same.</p>
-                    <p>For press/artist loans and custom orders, please contact via email:</p>
+                    <p>Gina Corrieri is an independent designer and reworker based in London who draws on a combination of influences - her multicultural heritage, colour as an expression of mind and mood, the euphoria and unity of clubbing and nightlife.</p>
+                    <p>By reworking secondhand materials she aims to create unique pieces that paint a picture of vibrancy and fusion.</p>
+                    <p>Made for all but with the intention that no wearer is the same.</p>
+                    <p>For press/artist loans, and other enquiries, please contact: info@ginacorrieri.com</p>
                 </div>
         
             </div>

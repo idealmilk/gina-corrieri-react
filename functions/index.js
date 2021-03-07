@@ -3,7 +3,8 @@ require("dotenv").config();
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// eslint-disable-next-line max-len
+const stripe = require("stripe")("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");
 
 const app = express();
 
