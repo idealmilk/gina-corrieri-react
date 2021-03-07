@@ -46,6 +46,11 @@
   .scroll-horizontal {
     height: 500px !important;
     width: 100% !important;
+
+    .scrollImage {
+      width: 350px;
+      object-fit: cover;
+    }
   }
 }
 

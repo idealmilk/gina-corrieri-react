@@ -17,7 +17,7 @@ const images = [Image1, Image2, Image3, Image4, Image5,
     Image6, Image7, Image8, Image9, Image10, Image11];
 
 const galleryImages = images.map((image, pos) => {
-    return <img alt={pos} key={pos} src={image} />
+    return <img alt={pos} key={pos} src={image} className="scrollImage"/>
 })
 
 const Gallery = () => {
