@@ -14,7 +14,7 @@ class FAQIndex extends React.Component {
 		.then((response) => {
 			console.log(response)
 			this.setState({
-				faq: response.items
+				faq: response.items.filter(item => (item.sys.contentType.sys.id === 'faq'))
 			})
 		})
 		.catch(console.error)
