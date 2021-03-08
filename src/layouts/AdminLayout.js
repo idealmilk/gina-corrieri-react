@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { signOutUserStart } from './../redux/User/user.actions';
 
 import Header from './../components/Header';
+import MobileNav from '../components/MobileNav';
 import VerticalNav from './../components/VerticalNav';
 import Footer from './../components/Footer';
 
@@ -17,6 +18,7 @@ const AdminLayout = props => {
   return (
     <div className="adminLayout">
       <Header {...props} />
+      <MobileNav {...props} />
       <div className="controlPanel">
         <div className="sidebar">
           <VerticalNav>
