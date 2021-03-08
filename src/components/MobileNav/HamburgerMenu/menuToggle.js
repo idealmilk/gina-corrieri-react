@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import React from "react";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Path = (props) => (
   <motion.path
@@ -20,14 +20,14 @@ const MenuToggle = ({ toggle, isOpen }) => {
           animate={isOpen ? "open" : "closed"}
           initial={false}
           variants={{
-            closed: { d: "M 2 2.5 L 20 2.5", stroke: "hsl(0, 0%, 100%)" },
+            closed: { d: "M 2 2.5 L 20 2.5", stroke: "hsl(0, 100%, 0%)" },
             open: { d: "M 3 16.5 L 17 2.5", stroke: "hsl(0, 0%, 18%)" },
           }}
           transition={transition}
         />
         <Path
           d="M 2 9.423 L 20 9.423"
-          stroke="hsl(0, 0%, 100%)"
+          stroke="hsl(0, 100%, 0%)"
           animate={isOpen ? "open" : "closed"}
           initial={false}
           variants={{
@@ -40,7 +40,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
           animate={isOpen ? "open" : "closed"}
           initial={false}
           variants={{
-            closed: { d: "M 2 16.346 L 20 16.346", stroke: "hsl(0, 0%, 100%)" },
+            closed: { d: "M 2 16.346 L 20 16.346", stroke: "hsl(0, 100%, 0%)" },
             open: { d: "M 3 2.5 L 17 16.346", stroke: "hsl(0, 0%, 18%)" },
           }}
           transition={transition}
