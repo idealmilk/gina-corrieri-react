@@ -25,6 +25,10 @@ class FAQIndex extends React.Component {
 		
 		return (
 			<div>
+				<MetaDecorator
+					title="FAQ | Gina Corrieri"
+					description="Gina Corrieri is an independent designer and reworker based in London."
+				/>
 				<FAQ items={this.state.faq} />
 			</div>
 		)

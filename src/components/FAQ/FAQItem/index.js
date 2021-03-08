@@ -1,8 +1,8 @@
 import React from 'react';
 
 const FAQItem = ({ item }) => {
-    console.log(item)
     const { question, answer } = item.fields;
+    
 	return (
 		<div className="item">
             <h3>{question}</h3>
