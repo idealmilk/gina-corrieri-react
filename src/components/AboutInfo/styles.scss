@@ -21,6 +21,15 @@
         line-height: 1.2;
         margin: 20px 0;
       }
+
+      a {
+        color: black;
+        text-decoration: underline;
+
+        &:hover {
+          color: lime;
+        }
+      }
     }
   }
 }

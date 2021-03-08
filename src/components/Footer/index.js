@@ -9,7 +9,9 @@ const Footer = props => {
           <div className="info">
             <a 
               href = "mailto: info@ginacorrieri.com"
-              className="email">
+              className="email"
+              target="_blank"
+              rel="noopener noreferrer">
                 Contact
             </a>
           </div>
