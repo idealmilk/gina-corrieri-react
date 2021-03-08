@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import MenuToggle from './menuToggle.js';
+import { NavMenu } from './navMenu';
 
 const MenuContainer = styled(motion.div)`
   min-width: 300px;
@@ -17,6 +18,12 @@ const MenuContainer = styled(motion.div)`
   transform: translateX(4em);
   user-select: none;
   padding: 1em 2.5em;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
 `;
 
 const menuVariants = {
@@ -54,6 +61,9 @@ const HamburgerMenu = props => {
                 variants={menuVariants}
                 transition={menuTransition}
             >
+                <ContentContainer>
+                    <NavMenu isOpen={isOpen} />
+                </ContentContainer>
             </MenuContainer>
         </div>
     )
