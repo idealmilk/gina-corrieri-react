@@ -1,17 +1,35 @@
 import React from 'react';
 
+import { client } from './../../contentful/client';
 import MetaDecorator from './../../components/MetaDecorator';
+import FAQ from './../../components/FAQ';
 
-const FAQ = ({}) => {
-	return (
-		<div>
-			<MetaDecorator
-				title="FAQ | Gina Corrieri"
-				description="Gina Corrieri is an independent designer and reworker based in London."
-			/>
-			<h1>FAQ</h1>
-		</div>
-	);
+class FAQIndex extends React.Component {
+	state = {
+		faq: [],
+	};
+
+	componentDidMount() {
+		client.getEntries()
+		.then((response) => {
+			console.log(response)
+			this.setState({
+				faq: response.items
+			})
+		})
+		.catch(console.error)
+	};
+
+	render() {
+		console.log(this.state.faq);
+		
+		return (
+			<div>
+				<FAQ items={this.state.faq} />
+			</div>
+		)
+	}
 }
 
-export default FAQ;
+export default FAQIndex;
+

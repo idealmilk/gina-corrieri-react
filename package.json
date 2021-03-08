@@ -12,6 +12,7 @@
     "aos": "^2.3.4",
     "axios": "^0.21.1",
     "ckeditor4-react": "^1.2.0",
+    "contentful": "^8.1.8",
     "firebase": "^7.14.1",
     "firebase-functions": "^3.13.2",
     "moment": "^2.29.1",
