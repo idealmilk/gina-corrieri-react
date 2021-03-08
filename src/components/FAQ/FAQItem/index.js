@@ -4,7 +4,7 @@ const FAQItem = ({ item }) => {
     console.log(item)
     const { question, answer } = item.fields;
 	return (
-		<div>
+		<div className="item">
             <h3>{question}</h3>
             <p>{answer}</p>
 		</div>

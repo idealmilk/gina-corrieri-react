@@ -1,0 +1,20 @@
+.faq {
+  width: 500px;
+  margin: 0 auto;
+  transform: translateY(150px);
+  -ms-transform: translateY(150px);
+  font-family: Texturina;
+
+  .item {
+    margin-bottom: 35px;
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
