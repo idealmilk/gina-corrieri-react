@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation  } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { signOutUserStart } from './../../../redux/User/user.actions';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { selectCartItemsCount } from './../../../redux/Cart/cart.selectors';
 
 import MenuToggle from './menuToggle.js';
 import { NavMenu } from './navMenu';
+
+const mapState = (state) => ({
+	currentUser: state.user.currentUser,
+	totalNumCartItems: selectCartItemsCount(state)
+});
 
 const MenuContainer = styled(motion.div)`
     min-width: 300px;
@@ -86,6 +95,19 @@ const commonVariants = {
 const commonTransition = { type: "spring", duration: 0.05 };
 
 const HamburgerMenu = props => {
+    const location = useLocation();
+	const [activeMenu, setActiveMenu] = useState(false);
+	const dispatch = useDispatch();
+	const { currentUser, totalNumCartItems } = useSelector(mapState);
+
+	const signOut = () => {
+		dispatch(signOutUserStart());
+	};
+
+	useEffect(() => {
+		setActiveMenu(false);
+    }, [location]);
+    
     const [isOpen, setOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -105,22 +127,63 @@ const HamburgerMenu = props => {
                 transition={menuTransition}
             >
                 <TopContainer>
-                    <LoginButton
-                        initial={false}
-                        animate={isOpen ? "show" : "hide"}
-                        variants={commonVariants}
-                        transition={commonTransition}
-                    >
-                        LOGIN
-                    </LoginButton>
-                    <LoginButton
-                        initial={false}
-                        animate={isOpen ? "show" : "hide"}
-                        variants={commonVariants}
-                        transition={commonTransition}
-                    >
-                        SIGN UP
-                    </LoginButton>
+                    {currentUser && [
+                        <div>
+						    <LoginButton
+                                initial={false}
+                                animate={isOpen ? "show" : "hide"}
+                                variants={commonVariants}
+                                transition={commonTransition}
+                            >
+                                <Link to="/orders">
+                                    Order History
+                                    <i className="fas fa-user-circle"></i>
+                                </Link>
+                            </LoginButton>
+                            <LoginButton
+                                initial={false}
+                                animate={isOpen ? "show" : "hide"}
+                                variants={commonVariants}
+                                transition={commonTransition}
+                            >
+                                <span onClick={() => signOut()}>
+                                    LogOut
+                                    <i className="fas fa-sign-out-alt"></i>
+                                </span>
+                            </LoginButton>
+                        </div>
+					]}
+
+					{!currentUser && [
+                        <div>
+                            <LoginButton
+                                initial={false}
+                                animate={isOpen ? "show" : "hide"}
+                                variants={commonVariants}
+                                transition={commonTransition}
+                            >
+                                <span onClick={() => signOut()}>
+                                    <Link to="/login">
+                                        Login
+                                        <i className="fas fa-user-circle"></i>
+                                    </Link>
+                                </span>
+                            </LoginButton>
+                            <LoginButton
+                                initial={false}
+                                animate={isOpen ? "show" : "hide"}
+                                variants={commonVariants}
+                                transition={commonTransition}
+                            >
+                                <span onClick={() => signOut()}>
+                                    <Link to="/signup">
+                                        Sign Up
+                                        <i className="fas fa-user-circle"></i>
+                                    </Link>
+                                </span>
+                            </LoginButton>
+                        </div>
+					]}
                 </TopContainer>
                 <ContentContainer>
                     <NavMenu isOpen={isOpen} />
