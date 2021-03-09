@@ -10,7 +10,7 @@ const NavLink = styled(motion.li)`
   cursor: pointer;
   a {
     text-decoration: none;
-    color: #444;
+    color: black;
     font-size: 3.5rem;
     transition: all 200ms ease-in-out;
   }

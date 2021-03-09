@@ -48,10 +48,13 @@ const LoginButton = styled(motion.button)`
     transition: all 250ms ease-in-out;
     display: flex;
     cursor: pointer;
-
+    a {
+        color: black;
+    }
+    
     padding: 0 12px;
     &:hover {
-        color: #666;
+        color: black;
     }
     &:focus {
         outline: none;
@@ -128,7 +131,7 @@ const HamburgerMenu = props => {
             >
                 <TopContainer>
                     {currentUser && [
-                        <div>
+                        <div className="topContainerLinks">
 						    <LoginButton
                                 initial={false}
                                 animate={isOpen ? "show" : "hide"}
@@ -136,7 +139,7 @@ const HamburgerMenu = props => {
                                 transition={commonTransition}
                             >
                                 <Link to="/orders">
-                                    Order History
+                                    Orders
                                     <i className="fas fa-user-circle"></i>
                                 </Link>
                             </LoginButton>
@@ -147,7 +150,7 @@ const HamburgerMenu = props => {
                                 transition={commonTransition}
                             >
                                 <span onClick={() => signOut()}>
-                                    LogOut
+                                    Log Out
                                     <i className="fas fa-sign-out-alt"></i>
                                 </span>
                             </LoginButton>
@@ -155,7 +158,7 @@ const HamburgerMenu = props => {
 					]}
 
 					{!currentUser && [
-                        <div>
+                        <div className="topContainerLinks">
                             <LoginButton
                                 initial={false}
                                 animate={isOpen ? "show" : "hide"}
@@ -188,6 +191,35 @@ const HamburgerMenu = props => {
                 <ContentContainer>
                     <NavMenu isOpen={isOpen} />
                 </ContentContainer>
+                <TopContainer>
+                    <LoginButton
+                        initial={false}
+                        animate={isOpen ? "show" : "hide"}
+                        variants={commonVariants}
+                        transition={commonTransition}
+                    >
+                        <a 
+                            href = "mailto: info@ginacorrieri.com"
+                            className="email"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                Contact
+                        </a>
+                    </LoginButton>
+                    <LoginButton
+                        initial={false}
+                        animate={isOpen ? "show" : "hide"}
+                        variants={commonVariants}
+                        transition={commonTransition}
+                    >
+                        <a 
+                            href="https://www.instagram.com/ginacorrieri_" 
+                            target="_blank" 
+                            rel="noopener noreferrer">
+                                Instagram
+                        </a>
+                    </LoginButton>
+                    </TopContainer>
             </MenuContainer>
         </div>
     )
