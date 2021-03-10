@@ -39,24 +39,31 @@ const TopContainer = styled.div`
 	width: 100%;
 `;
 
+const BottomContainer = styled.div`
+	display: flex;
+	width: 100%;
+	margin-top: 15px;
+`;
+
 const LoginButton = styled(motion.button)`
 	border: 0;
 	background: transparent;
 	color: black;
-	font-size: 14px;
-	font-weight: 900;
+	font-size: 2rem;
+	font-family: "Teko", sans-serif;
 	transition: all 250ms ease-in-out;
 	display: flex;
 	cursor: pointer;
-	padding: 5px 12px;
-	&:hover {
-		color: #666;
-	}
+	padding: 0 .5em;
+	text-transform: uppercase;
 	&:focus {
 		outline: none;
 	}
 	&:not(:last-of-type) {
-		border-right: 1px solid #b4b4b4;
+		border-right: 2px solid black;
+	}
+	a{
+		color: black;
 	}
 `;
 
@@ -66,7 +73,7 @@ const SocialButton = styled(motion.button)`
 	transition: all 250ms ease-in-out;
 	display: flex;
 	cursor: pointer;
-	padding: 5px 12px;
+	padding: 5px .5em;
 	&:focus {
 		outline: none;
 	}
@@ -146,69 +153,67 @@ const HamburgerMenu = props => {
                 variants={menuVariants}
                 transition={menuTransition}
             >
-                <TopContainer>
-                    {currentUser && [
-                        <div className="topContainerLinks">
-						    <LoginButton
-                                initial={false}
-                                animate={isOpen ? "show" : "hide"}
-                                variants={commonVariants}
-                                transition={commonTransition}
-                            >
-                                <Link to="/orders">
-                                    Orders
-                                    <i className="fas fa-user-circle"></i>
-                                </Link>
-                            </LoginButton>
-                            <LoginButton
-                                initial={false}
-                                animate={isOpen ? "show" : "hide"}
-                                variants={commonVariants}
-                                transition={commonTransition}
-                            >
-                                <span onClick={() => signOut()}>
-                                    Log Out
-                                    <i className="fas fa-sign-out-alt"></i>
-                                </span>
-                            </LoginButton>
-                        </div>
-					]}
+				{currentUser && [
+					<TopContainer>
+						<LoginButton
+							initial={false}
+							animate={isOpen ? "show" : "hide"}
+							variants={commonVariants}
+							transition={commonTransition}
+						>
+							<Link to="/orders">
+								Orders
+								<i className="fas fa-user-circle"></i>
+							</Link>
+						</LoginButton>
+						<LoginButton
+							initial={false}
+							animate={isOpen ? "show" : "hide"}
+							variants={commonVariants}
+							transition={commonTransition}
+						>
+							<span onClick={() => signOut()}>
+								Log Out
+								<i className="fas fa-sign-out-alt"></i>
+							</span>
+						</LoginButton>
+					</TopContainer>
+				]}
 
-					{!currentUser && [
-                        <div className="topContainerLinks">
-                            <LoginButton
-                                initial={false}
-                                animate={isOpen ? "show" : "hide"}
-                                variants={commonVariants}
-                                transition={commonTransition}
-                            >
-                                <span onClick={() => signOut()}>
-                                    <Link to="/login">
-                                        Login
-                                        <i className="fas fa-user-circle"></i>
-                                    </Link>
-                                </span>
-                            </LoginButton>
-                            <LoginButton
-                                initial={false}
-                                animate={isOpen ? "show" : "hide"}
-                                variants={commonVariants}
-                                transition={commonTransition}
-                            >
-                                <span onClick={() => signOut()}>
-                                    <Link to="/signup">
-                                        Sign Up
-                                        <i className="fas fa-user-circle"></i>
-                                    </Link>
-                                </span>
-                            </LoginButton>
-                        </div>
-					]}
-                </TopContainer>
+				{!currentUser && [
+					<TopContainer>
+						<LoginButton
+							initial={false}
+							animate={isOpen ? "show" : "hide"}
+							variants={commonVariants}
+							transition={commonTransition}
+						>
+							<span onClick={() => signOut()}>
+								<Link to="/login">
+									Login
+									<i className="fas fa-user-circle"></i>
+								</Link>
+							</span>
+						</LoginButton>
+						<LoginButton
+							initial={false}
+							animate={isOpen ? "show" : "hide"}
+							variants={commonVariants}
+							transition={commonTransition}
+						>
+							<span onClick={() => signOut()}>
+								<Link to="/signup">
+									Sign Up
+									<i className="fas fa-user-circle"></i>
+								</Link>
+							</span>
+						</LoginButton>
+					</TopContainer>
+				]}
                 <ContentContainer>
                     <NavMenu isOpen={isOpen} />
                 </ContentContainer>
-                <TopContainer>
+                <BottomContainer>
                     <SocialButton
                         initial={false}
                         animate={isOpen ? "show" : "hide"}
@@ -236,7 +241,7 @@ const HamburgerMenu = props => {
                                 <FaInstagram />
                         </a>
                     </SocialButton>
-                </TopContainer>
+                </BottomContainer>
             </MenuContainer>
         </HamburgerMenuContainer>
     )
