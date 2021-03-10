@@ -117,11 +117,13 @@
 
 @media only screen and (max-width: 600px) {
   .productResults .products .product {
-    width: 75%;
+    width: 95%;
     height: 400px;
+    margin: 0 auto 5rem;
 
     .thumb {
-      height: 370px;
+      height: 250px;
+      width: 100%;
     }
 
     .details {
