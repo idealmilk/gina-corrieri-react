@@ -5,6 +5,9 @@ import styled from 'styled-components';
 const Button = styled.div`
   z-index: 99;
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin: 15px 20px 0 0 
 `;
 
 const Path = (props) => (
