@@ -2,8 +2,8 @@
   max-width: 600px;
   margin: 0 auto;
   padding-bottom: 70px;
-  transform: translateY(50px);
-  -ms-transform: translateY(50px);
+  transform: translateY(115px);
+  -ms-transform: translateY(115px);
 
   .feature {
     margin-bottom: 60px;
@@ -28,8 +28,8 @@
 @media only screen and (max-width: 600px) {
   .features {
     width: 95%;
-    transform: translateY(20px);
-    -ms-transform: translateY(20px);
+    transform: translateY(85px);
+    -ms-transform: translateY(85px);
     .feature {
       iframe {
         width: 100%;

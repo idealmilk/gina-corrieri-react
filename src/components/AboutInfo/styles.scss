@@ -2,6 +2,9 @@
   display: block;
 
   .wrap {
+    width: 100%;
+    height: 100%;
+
     .body {
       position: absolute;
       right: 0;
@@ -45,8 +48,10 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
   .aboutInfo {
+    -ms-transform: translateY(65px);
+    transform: translateY(65px);
     .wrap {
       .body {
         width: 95%;

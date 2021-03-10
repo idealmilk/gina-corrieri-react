@@ -1,8 +1,8 @@
 .faq {
   width: 500px;
   margin: 0 auto;
-  transform: translateY(150px);
-  -ms-transform: translateY(150px);
+  transform: translateY(50px);
+  -ms-transform: translateY(50px);
   font-family: Texturina;
 
   .item {
@@ -16,5 +16,13 @@
     p {
       font-size: 1.5rem;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .faq {
+    width: 95%;
+    transform: translateY(85px);
+    -ms-transform: translateY(85px);
   }
 }
