@@ -5,6 +5,7 @@ import { signOutUserStart } from './../../../redux/User/user.actions';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { selectCartItemsCount } from './../../../redux/Cart/cart.selectors';
+import { FaRegEnvelope, FaInstagram } from "react-icons/fa";
 
 import MenuToggle from './menuToggle.js';
 import { NavMenu } from './navMenu';
@@ -14,87 +15,103 @@ const mapState = (state) => ({
 	totalNumCartItems: selectCartItemsCount(state)
 });
 
-const MenuContainer = styled(motion.div)`
-    min-width: 300px;
-    width: 100%;
-    max-width: 90%;
-    height: 100%;
-    background-color: lime;
-    z-index: 90;
-    position: fixed;
-    top: 0;
-    right: 0;
-    transform: translateX(4em);
-    user-select: none;
-    padding: 1em 2.5em;
+const HamburgerMenuContainer = styled.div`
+  	display: flex;
 `;
 
-const ContentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 1em;
+const MenuContainer = styled(motion.div)`
+	min-width: 300px;
+	width: 100%;
+	max-width: 85%;
+	height: 100%;
+	background-color: lime;
+	z-index: 90;
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: translateX(4em);
+	user-select: none;
+	padding: 1em 2.5em;
 `;
 
 const TopContainer = styled.div`
-    display: flex;
-    width: 100%;
+	display: flex;
+	width: 100%;
 `;
 
 const LoginButton = styled(motion.button)`
-    border: 0;
-    background: transparent;
-    font-size: 1.9rem;
-    font-family: "Teko", sans-serif;
-    transition: all 250ms ease-in-out;
-    display: flex;
-    cursor: pointer;
-    a {
-        color: black;
-    }
-    
-    padding: 0 12px;
-    &:hover {
-        color: black;
-    }
-    &:focus {
-        outline: none;
-    }
-    &:not(:last-of-type) {
-        border-right: 1px solid black;
-    }
+	border: 0;
+	background: transparent;
+	color: black;
+	font-size: 14px;
+	font-weight: 900;
+	transition: all 250ms ease-in-out;
+	display: flex;
+	cursor: pointer;
+	padding: 5px 12px;
+	&:hover {
+		color: #666;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:not(:last-of-type) {
+		border-right: 1px solid #b4b4b4;
+	}
+`;
+
+const SocialButton = styled(motion.button)`
+	color: black;
+	font-size: 2.5rem;
+	transition: all 250ms ease-in-out;
+	display: flex;
+	cursor: pointer;
+	padding: 5px 12px;
+	&:focus {
+		outline: none;
+	}
+	a{
+		color: black;
+	}
+`;
+
+const ContentContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin-top: 1em;
 `;
 
 const menuVariants = {
-    open: {
-        transform: "translateX(3%)",
-    },
-    closed: {
-        transform: "translateX(103%)",
-    },
+	open: {
+		transform: "translateX(3%)",
+	},
+	closed: {
+		transform: "translateX(103%)",
+	},
 };
 
 const menuTransition = {
-    type: "spring",
-    duration: 1,
-    stiffness: 33,
-    delay: 0.1,
+	type: "spring",
+	duration: 1,
+	stiffness: 33,
+	delay: 0.1,
 };
 
 const commonVariants = {
-    show: {
-        transform: "translateX(0em)",
-        opacity: 1,
-        transition: {
-            delay: 0.3,
-            duration: 0.01,
-        },
-    },
-    hide: {
-        transform: "translateX(5em)",
-        opacity: 0,
-    },
+	show: {
+		transform: "translateX(0em)",
+		opacity: 1,
+		transition: {
+		delay: 0.3,
+		duration: 0.01,
+		},
+	},
+	hide: {
+		transform: "translateX(5em)",
+		opacity: 0,
+	},
 };
-  
+
 const commonTransition = { type: "spring", duration: 0.05 };
 
 const HamburgerMenu = props => {
@@ -118,7 +135,7 @@ const HamburgerMenu = props => {
     };
 
     return (
-        <div className="container">
+        <HamburgerMenuContainer>
             <MenuToggle 
                 toggle={toggleMenu} 
                 isOpen={isOpen} 
@@ -192,7 +209,7 @@ const HamburgerMenu = props => {
                     <NavMenu isOpen={isOpen} />
                 </ContentContainer>
                 <TopContainer>
-                    <LoginButton
+                    <SocialButton
                         initial={false}
                         animate={isOpen ? "show" : "hide"}
                         variants={commonVariants}
@@ -203,10 +220,10 @@ const HamburgerMenu = props => {
                             className="email"
                             target="_blank"
                             rel="noopener noreferrer">
-                                Contact
+                                <FaRegEnvelope />
                         </a>
-                    </LoginButton>
-                    <LoginButton
+                    </SocialButton>
+                    <SocialButton
                         initial={false}
                         animate={isOpen ? "show" : "hide"}
                         variants={commonVariants}
@@ -216,12 +233,12 @@ const HamburgerMenu = props => {
                             href="https://www.instagram.com/ginacorrieri_" 
                             target="_blank" 
                             rel="noopener noreferrer">
-                                Instagram
+                                <FaInstagram />
                         </a>
-                    </LoginButton>
-                    </TopContainer>
+                    </SocialButton>
+                </TopContainer>
             </MenuContainer>
-        </div>
+        </HamburgerMenuContainer>
     )
 };
 
