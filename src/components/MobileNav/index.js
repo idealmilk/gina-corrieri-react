@@ -8,7 +8,6 @@ import Logo from './../../assets/transparency_logo.gif';
 const NavbarContainer = styled.div`
   width: 100%;
   height: 55px;
-  border-bottom: 1px solid #fff;
   display: flex;
   position: fixed;
   top: 0;
@@ -16,6 +15,10 @@ const NavbarContainer = styled.div`
   align-items: center;
   padding: 0 1.5em;
   z-index: 1000;
+  display: none;
+  @media (max-width: 600px) {
+    display: block;
+  }
 `;
 
 const NavbarLogo = styled.div`
