@@ -49,11 +49,12 @@
   .aboutInfo {
     .wrap {
       .body {
-        width: 100%;
+        width: 95%;
         position: relative;
         transform: none;
         -ms-transform: none;
-        margin-top: 60px;
+        padding: 0;
+        margin: 0 auto;
       }
     }
   }
