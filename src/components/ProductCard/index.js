@@ -129,7 +129,7 @@ const ProductCard = ({}) => {
 				<p>
 					<strong>Available in size:</strong> {productSize}
 				</p>
-				<Collapsible trigger={<p><strong>Measurements </strong><span className="trigger">{open ? '-' : '+'}</span></p>}
+				{/* <Collapsible trigger={<p><strong>Measurements </strong><span className="trigger">{open ? '-' : '+'}</span></p>}
 					{...{ open, handleTriggerClick }} overflowWhenOpen="visible">
 					<p>
 						{productNeckline > 0 ? `Neckline: ${productNeckline}` : ''}
@@ -152,7 +152,7 @@ const ProductCard = ({}) => {
 					<p>
 						{productWaist > 0 ? `Waist: ${productWaist}` : ''}
 					</p>
-				</Collapsible>
+				</Collapsible> */}
 			</div>
 			<div className="buy">
 				<div className="price">
