@@ -11,7 +11,17 @@
 @media only screen and (max-width: 900px) {
   .orders {
     width: 90%;
+    position: relative;
+    top: auto;
+    left: auto;
+    -ms-transform: translateY(80px);
+    transform: translateY(80px);
+    margin: 0 auto;
+  }
+}
 
+@media only screen and (max-width: 600px) {
+  .orders {
     th {
       font-size: 1.5rem !important;
     }
