@@ -9,6 +9,7 @@ import { selectCartItems } from './../../redux/Cart/cart.selectors';
 import { addProduct } from './../../redux/Cart/cart.actions';
 import Button from './../forms/Button';
 import './styles.scss';
+import MobilePageTitle from '../MobilePageTitle';
 
 const mapState = state => ({
   	product: state.productsData.product,
@@ -110,6 +111,7 @@ const ProductCard = ({}) => {
 
 	return (
 		<div className="productCard">
+			<MobilePageTitle title={productName}/>
 			<div className="hero">
 				<img src={productThumbnail} alt={productName} />
 			</div>

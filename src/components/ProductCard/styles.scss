@@ -1,5 +1,5 @@
 .productCard {
-  max-width: 1450px;
+  max-width: 1350px;
   height: 100vh;
   margin: 0 auto 10rem;
 
@@ -113,5 +113,55 @@
 
   &:hover {
     color: lime;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .productCard {
+    transform: translateY(65px);
+    -ms-transform: translateY(65px);
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+
+    .productDetails,
+    .buy,
+    .hero {
+      position: relative;
+      top: auto;
+      -ms-transform: none;
+      transform: none;
+    }
+
+    .hero {
+      display: block;
+      order: 1;
+      right: none;
+      left: none;
+      width: 85%;
+      margin-bottom: 50px;
+    }
+
+    .productDetails,
+    .buy {
+      width: 100%;
+      padding: 0;
+      z-index: 3;
+    }
+
+    .buy {
+      order: 2;
+      display: flex;
+      width: 75%;
+      margin: 0 auto 20px;
+      justify-content: space-between;
+    }
+
+    .productDetails {
+      order: 3;
+      h1 {
+        display: none;
+      }
+    }
   }
 }
