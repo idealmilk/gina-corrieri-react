@@ -1,0 +1,15 @@
+.mobilePageTitle {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .mobilePageTitle {
+    display: block;
+    margin: 0 auto 30px auto;
+    color: lime;
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+    font-family: Teko, sans-serif;
+  }
+}

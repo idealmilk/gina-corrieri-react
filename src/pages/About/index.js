@@ -3,6 +3,7 @@ import React from 'react';
 import { client } from './../../contentful/client';
 import MetaDecorator from './../../components/MetaDecorator';
 import AboutInfo from './../../components/AboutInfo';
+import MobilePageTitle from '../../components/MobilePageTitle';
 
 class About extends React.Component {
 	state = {

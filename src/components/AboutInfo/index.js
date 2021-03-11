@@ -1,10 +1,12 @@
 import React from 'react';
 import marked from 'marked';
 import './styles.scss';
+import MobilePageTitle from '../MobilePageTitle';
 
 const AboutInfo = ({ siteMetaData }) => {
     return (
         <div className="aboutInfo">
+            <MobilePageTitle title="About"/>
             <div className="wrap">
                 <div className="body">
                     {siteMetaData.map((data, pos) => {

@@ -44,7 +44,6 @@ const OrderHistory = ({ orders }) => {
   return (
     <TableContainer>
       <Table>
-
         <TableHead>
           <TableRow>
             {columns.map((column, pos) => {

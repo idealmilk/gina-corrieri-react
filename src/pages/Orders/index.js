@@ -4,6 +4,7 @@ import { getUserOrderHistory } from './../../redux/Orders/orders.actions';
 import OrderHistory from './../../components/OrderHistory';
 import './styles.scss';
 import MetaDecorator from './../../components/MetaDecorator';
+import MobilePageTitle from '../../components/MobilePageTitle';
 
 const mapState = ({ user, ordersData }) => ({
 	currentUser: user.currentUser,
@@ -27,6 +28,7 @@ const Orders = props => {
 				title="Orders | Gina Corrieri"
 				description="Gina Corrieri is an independent designer and reworker based in London."
         	/>
+			<MobilePageTitle title="Orders"/>
         	<OrderHistory orders={orderHistory} />
       	</div>
   	);
