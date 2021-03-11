@@ -11,5 +11,13 @@
 @media only screen and (max-width: 900px) {
   .orders {
     width: 90%;
+
+    th {
+      font-size: 1.5rem !important;
+    }
+
+    td {
+      font-size: 1.3rem !important;
+    }
   }
 }

@@ -24,7 +24,7 @@ const Orders = props => {
   return (
     <div>
       <MetaDecorator
-        title="Order History | Gina Corrieri"
+        title="Orders | Gina Corrieri"
         description="Gina Corrieri is an independent designer and reworker based in London."
       />
       <div className="orders">
