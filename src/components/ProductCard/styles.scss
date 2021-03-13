@@ -122,8 +122,8 @@
 
 @media only screen and (max-width: 900px) {
   .productCard {
-    transform: translateY(65px);
-    -ms-transform: translateY(65px);
+    transform: translateY(100px);
+    -ms-transform: translateY(100px);
     display: flex;
     flex-direction: column;
     width: 85%;
@@ -170,9 +170,13 @@
     .buy {
       order: 2;
       display: flex;
-      width: 75%;
-      margin: 0 auto 20px;
+      width: 65%;
+      margin: 30px auto;
       justify-content: space-between;
+
+      .price {
+        margin-top: -4px;
+      }
     }
 
     .productDetails {

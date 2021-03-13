@@ -15,6 +15,7 @@
 
     p {
       font-size: 1.5rem;
+      padding-bottom: 10px;
     }
   }
 }
@@ -22,7 +23,12 @@
 @media only screen and (max-width: 900px) {
   .faq {
     width: 95%;
-    transform: translateY(65px);
-    -ms-transform: translateY(65px);
+    height: 100%;
+    transform: translateY(85px);
+    -ms-transform: translateY(85px);
+
+    .item {
+      margin-bottom: 25px;
+    }
   }
 }

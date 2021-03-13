@@ -196,6 +196,11 @@ a:hover {
 }
 
 @media only screen and (max-width: 900px) {
+  .main {
+    height: 100%;
+    padding-bottom: 100px;
+  }
+
   .pageTitle {
     display: none;
   }
