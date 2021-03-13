@@ -53,24 +53,12 @@ const ProductResults = ({ }) => {
         );
     }
 
-    data.sort(function(a, b) {
-        return b.productCategory - a.productCategory;
-    });
-
     data.sort(function (a, b) {
-
-        // Sort by votes
-        // If the first item has a higher number, move it down
-        // If the first item has a lower number, move it up
         if (parseFloat(a.productQuantity) > parseFloat(b.productQuantity)) return -1;
         if (parseFloat(a.productQuantity) < parseFloat(b.productQuantity)) return 1;
-    
-        // If the votes number is the same between both items, sort alphabetically
-        // If the first item comes first in the alphabet, move it up
-        // Otherwise move it down
+
         if (a.productCategory < b.productCategory) return 1;
         if (a.productCategory > b.productCategory) return -1;
-    
     });
 
     return (

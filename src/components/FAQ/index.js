@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style.scss';
+import './styles.scss';
 import FAQItem from './FAQItem';
 import MobilePageTitle from '../MobilePageTitle';
 

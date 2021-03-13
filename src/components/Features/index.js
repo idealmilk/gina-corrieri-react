@@ -5,12 +5,13 @@ import Feature from './Feature';
 import MobilePageTitle from '../MobilePageTitle';
 
 const Features = ({ features }) => {
-	console.log(features)
+	console.log(features);
+	const sortedFeatures = features.sort((a, b) => new Date(b.fields.releaseDate) - new Date(a.fields.releaseDate))
 
   	return (
 		<div className="features">
 			<MobilePageTitle title="Features"/>
-			{features.map((feature, pos) => <Feature feature={feature} key={pos} />)}
+			{sortedFeatures.map((feature, pos) => <Feature feature={feature} key={pos} />)}
 		</div>
 	);
 }
