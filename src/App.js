@@ -52,27 +52,27 @@ const App = props => {
           </HomepageLayout>
         )} />
         <Route path="/about" render={() => (
-          <MainLayout>
+          <MainLayout pageTitle="About">
             <About />
           </MainLayout>
         )} />
         <Route path="/faq" render={() => (
-          <MainLayout>
+          <MainLayout pageTitle="FAQ">
             <FAQIndex />
           </MainLayout>
         )} />
         <Route exact path="/shop" render={() => (
-          <MainLayout>
+          <MainLayout pageTitle="Shop">
             <Shop />
           </MainLayout>
         )} />
         <Route exact path="/features" render={() => (
-          <MainLayout>
+          <MainLayout pageTitle="Features">
             <Features />
           </MainLayout>
         )} />
         <Route path="/shop/:filterType" render={() => (
-          <MainLayout>
+          <MainLayout pageTitle="Shop">
             <Shop />
           </MainLayout>
         )} />
@@ -82,43 +82,43 @@ const App = props => {
           </ProductLayout>
         )} />
         <Route path="/cart" render={() => (
-          <MainLayout>
+          <MainLayout pageTitle="Cart">
             <Cart />
           </MainLayout>
         )} />
         <Route path="/payment" render={() => (
           <WithAuth>
-            <MainLayout>
+            <MainLayout pageTitle="Payment">
               <Payment />
             </MainLayout>
           </WithAuth>
         )} />
         <Route path="/signup" render={() => (
-          <MainLayout>
+          <MainLayout pageTitle="Sign Up">
             <SignUp />
           </MainLayout>
         )} />
         <Route path="/login"
           render={() => (
-            <MainLayout>
+            <MainLayout pageTitle="Login">
               <Login />
             </MainLayout>
           )} />
         <Route path="/Reset" render={() => (
-          <MainLayout>
+          <MainLayout pageTitle="Reset">
             <Reset />
           </MainLayout>
         )} />
         <Route path="/orders" render={() => (
           <WithAuth>
-            <MainLayout>
+            <MainLayout pageTitle="Orders">
               <Orders />
             </MainLayout>
           </WithAuth>
         )} />
         <Route path="/order/:orderID" render={() => (
           <WithAuth>
-            <MainLayout>
+            <MainLayout pageTitle="Order">
               <Order />
             </MainLayout>
           </WithAuth>
