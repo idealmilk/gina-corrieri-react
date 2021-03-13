@@ -30,19 +30,21 @@
       }
 
       .info,
-      .contact {
+      .socials {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
       }
 
-      .contact {
-        right: 0;
-        padding-right: 10px;
-
-        .email {
+      .info {
+        a:first-of-type {
           margin-right: 10px;
         }
+      }
+
+      .socials {
+        right: 0;
+        margin-right: 10px;
       }
     }
   }

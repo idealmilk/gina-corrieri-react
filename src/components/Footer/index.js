@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
 const Footer = props => {
@@ -14,8 +15,11 @@ const Footer = props => {
               rel="noopener noreferrer">
                 Contact
             </a>
+            <Link to="/faq">
+              FAQ
+            </Link>
           </div>
-          <div className="contact">
+          <div className="socials">
             <a 
               href="https://www.instagram.com/ginacorrieri_" 
               target="_blank" 
