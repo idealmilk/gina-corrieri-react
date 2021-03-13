@@ -106,7 +106,8 @@ const PaymentDetails = () => {
       }).then(({ paymentMethod }) => {
 
         stripe.confirmCardPayment(clientSecret, {
-          payment_method: paymentMethod.id
+          payment_method: paymentMethod.id,
+          receipt_email: currentUser.email,
         })
         .then(({ paymentIntent }) => {
 
@@ -125,6 +126,8 @@ const PaymentDetails = () => {
               };
             })
           }
+
+          alert("Thank you for your purchase!");
           cartItems.forEach(product => firestore.collection('products').doc(product.documentID).update({productQuantity: 0}));
 
           dispatch(
