@@ -7,7 +7,7 @@ const Button = styled.div`
   cursor: pointer;
   position: absolute;
   right: 0;
-  margin: 15px 20px 0 0 
+  margin: 15px 28px 0 0 
 `;
 
 const Path = (props) => (

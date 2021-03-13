@@ -42,7 +42,7 @@ const NavbarIcons = styled.div`
 	position: absolute;
 	top: 50%;
 	right: 0;
-	font-size: 2.8rem;
+	font-size: 2.5rem;
 	margin-right: 65px;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
