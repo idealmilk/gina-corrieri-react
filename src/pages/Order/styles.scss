@@ -33,14 +33,34 @@
 @media only screen and (max-width: 900px) {
   .order {
     width: 90%;
+    margin: 0;
+    position: relative;
+    top: auto;
+    left: auto;
+    -ms-transform: translateY(85px);
+    transform: translateY(85px);
+
+    h1 {
+      font-size: 4rem;
+      color: lime;
+      text-align: center;
+      margin: 0 auto 20px 0;
+    }
+
+    th {
+      font-size: 1.5rem !important;
+    }
+
+    td {
+      font-size: 1.3rem !important;
+    }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .order {
-    h1,
     h3 {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
 
     .total {
