@@ -29,6 +29,10 @@
     transform: translateY(-50%);
   }
 
+  .alice-carousel {
+    display: none;
+  }
+
   .productDetails,
   .buy {
     width: calc((100% - 45rem) / 2);
@@ -134,12 +138,24 @@
     }
 
     .hero {
-      display: block;
+      display: none;
       order: 1;
       right: none;
       left: none;
       width: 85%;
       margin-bottom: 50px;
+    }
+
+    .scroll-horizontal {
+      display: none;
+    }
+
+    .alice-carousel {
+      display: block;
+
+      .carouselImage {
+        width: 100%;
+      }
     }
 
     .productDetails,

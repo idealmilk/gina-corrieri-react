@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import Collapsible from 'react-collapsible';
 import ScrollHorizontal from 'react-scroll-horizontal';
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
 import { fetchProductStart, setProduct } from './../../redux/Products/products.actions';
 import { selectCartItems } from './../../redux/Cart/cart.selectors';
 import { addProduct } from './../../redux/Cart/cart.actions';
@@ -26,26 +27,10 @@ const ProductCard = ({}) => {
 	const { product } = useSelector(mapState);
 	const { cartItems } = useSelector(mapCart);
 
-	const {
-		productThumbnail,
-		productImage1,
-		productImage2,
-		productImage3,
-		productImage4,
-		productName,
-		productPrice,
-		productDesc,
-		productSize,
-		productStyle,
-		productColour,
-		productHeight,
-		productNeckline,
-		productLength,
-		productWidth,
-		productShoulder,
-		productArmhole,
-		productWaist
-	} = product;
+	const { productThumbnail, productImage1, productImage2, productImage3, productImage4,
+		productName, productPrice, productDesc, productSize, productStyle, productColour,
+		productHeight, productNeckline, productLength, productWidth, productShoulder,
+		productArmhole, productWaist} = product;
 
   	useEffect(() => {
     	dispatch(
@@ -95,19 +80,26 @@ const ProductCard = ({}) => {
 		setOpen(!open);
 	};
 
+	// These null values are to add padding around horizontal scroll
 	const productImage0 = null;
 	const productImage5 = null;
 
 	const images = [productImage0, productImage1, productImage2, productImage3, productImage4, productImage5]
+	const mobileImage = [productImage1, productImage2, productImage3, productImage4];
 
 	const productImages = images.map((image, pos) => {
 		if (image) {
 			return <img alt={pos} key={pos} src={image} className="productImage" />
-		} else {
-			return <div className="emptySpace"></div>
 		}
+	});
 
-	})
+	const mobileProductImages = mobileImage.map((image, pos) => {
+		if (image) {
+			return <img src={image} alt={pos} className="carouselImage" />
+		} else {
+			return null;
+		}
+	});
 
 	return (
 		<div className="productCard">
@@ -115,6 +107,11 @@ const ProductCard = ({}) => {
 			<div className="hero">
 				<img src={productThumbnail} alt={productName} />
 			</div>
+
+			<AliceCarousel>
+				{mobileProductImages}
+			</AliceCarousel>
+
 			<div className="productDetails">
 				<h1>
 					{productName}
