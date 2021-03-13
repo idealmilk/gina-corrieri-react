@@ -31,15 +31,38 @@
   }
 
   .copy {
-    max-width: 600px;
+    position: relative;
     margin: 120px auto 150px auto;
-    text-align: center;
+    width: 100%;
 
-    p {
-      margin-bottom: 20px;
-      font-size: 2.1rem;
-      font-family: Texturina;
-      line-height: 1.2;
+    .text {
+      margin: 0 auto;
+      max-width: 600px;
+      text-align: center;
+
+      p {
+        margin-bottom: 20px;
+        font-size: 2.1rem;
+        font-family: Texturina;
+        line-height: 1.2;
+      }
+    }
+
+    .textures {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      top: 0;
+      width: 100%;
+
+      img {
+        height: 600px;
+
+        &:first-of-type {
+          height: 800px;
+          // transform: rotate(20deg);
+        }
+      }
     }
   }
 
