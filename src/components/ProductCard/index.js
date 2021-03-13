@@ -93,13 +93,15 @@ const ProductCard = ({}) => {
 		}
 	});
 
-	const mobileProductImages = mobileImage.map((image, pos) => {
+	const mobileProductImages = []
+	
+	mobileImage.forEach((image, pos) => {
 		if (image) {
-			return <img src={image} alt={pos} className="carouselImage" />
-		} else {
-			return null;
+			mobileProductImages.push(<img src={image} alt={pos} className="carouselImage" />)
 		}
 	});
+
+
 
 	return (
 		<div className="productCard">
