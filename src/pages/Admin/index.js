@@ -5,7 +5,6 @@ import Modal from './../../components/Modal';
 import FormInput from './../../components/forms/FormInput';
 import FormSelect from './../../components/forms/FormSelect';
 import Button from './../../components/forms/Button';
-import LoadMore from './../../components/LoadMore';
 import CKEditor from 'ckeditor4-react';
 import './styles.scss';
 import MetaDecorator from './../../components/MetaDecorator';
@@ -104,19 +103,6 @@ const Admin = props => {
     );
     resetForm();
 
-  };
-
-  const handleLoadMore = () => {
-    dispatch(
-      fetchProductsStart({
-        startAfterDoc: queryDoc,
-        persistProducts: data
-      })
-    );
-  };
-
-  const configLoadMore = {
-    onLoadMoreEvt: handleLoadMore,
   };
 
   return (
@@ -358,26 +344,6 @@ const Admin = props => {
                         </tr>
                       )
                     })}
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td>
-
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <table border="0" cellPadding="10" cellSpacing="0">
-                  <tbody>
-                    <tr>
-                      <td>
-                        {!isLastPage && (
-                          <LoadMore {...configLoadMore} />
-                        )}
-                      </td>
-                    </tr>
                   </tbody>
                 </table>
               </td>
