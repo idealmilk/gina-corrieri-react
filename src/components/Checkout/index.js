@@ -79,7 +79,7 @@ const Checkout = ({ }) => {
                     <p>Subtotal</p>
                   </div>
                   <div className="value">
-                    <p>£{total}</p>
+                    <p>£{total.toFixed(2)}</p>
                   </div>
                 </div>
                 <div className="shipping">
@@ -95,7 +95,7 @@ const Checkout = ({ }) => {
                     <p>Total</p>
                   </div>
                   <div className="value">
-                    <p>£{total + 2.75}</p>
+                    <p>£{(total + 2.75).toFixed(2)}</p>
                   </div>
                 </div>
               </div>

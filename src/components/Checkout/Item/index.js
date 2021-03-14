@@ -58,7 +58,7 @@ const Item = (product) => {
             </p>
           </td>
           <td>
-            <p>£{productPrice}</p>
+            <p>£{productPrice.toFixed(2)}</p>
           </td>
           <td>
             <p onClick={() => handleRemoveCartItem(documentID)} className="remove">
