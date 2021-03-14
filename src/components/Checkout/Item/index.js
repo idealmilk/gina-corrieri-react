@@ -39,10 +39,10 @@ const Item = (product) => {
           <td>
             <img src={productThumbnail} alt={productName} />
           </td>
-          <td>
+          <td className="productName">
             <p>{productName}</p>
           </td>
-          <td>
+          <td className="productQuantity">
             <p>
               <span className="cartBtn"
                 onClick={() => handleReduceItem(product)}>
@@ -60,8 +60,8 @@ const Item = (product) => {
           <td>
             <p>£{productPrice}</p>
           </td>
-          <td align="center">
-            <p onClick={() => handleRemoveCartItem(documentID)}>
+          <td>
+            <p onClick={() => handleRemoveCartItem(documentID)} className="remove">
               Remove
             </p>
           </td>

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectCartItems, selectCartTotal } from './../../redux/Cart/cart.selectors';
 import { createStructuredSelector } from 'reselect';
+import MobilePageTitle from '../MobilePageTitle';
 import './styles.scss';
 import Button from './../forms/Button';
 import Item from './Item';
@@ -20,6 +21,7 @@ const Checkout = ({ }) => {
 
   return (
     <div className="checkout">
+      <MobilePageTitle title="Cart"/>
       <div className="cart">
         {cartItems.length > 0 ? (
           <div>
