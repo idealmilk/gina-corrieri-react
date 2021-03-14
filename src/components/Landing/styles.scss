@@ -18,6 +18,10 @@
       width: 90%;
     }
 
+    .mobileBanner {
+      display: none;
+    }
+
     .logo {
       display: inline-block;
       position: absolute;
@@ -78,8 +82,47 @@
 }
 
 @media only screen and (max-width: 980px) {
-  .directory {
-    width: 100%;
-    height: 50%;
+  .landing {
+    .hero {
+      height: 85vh;
+      -webkit-transform: translateY(65px);
+      transform: translateY(65px);
+
+      .video {
+        display: none;
+      }
+
+      .logo {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+      }
+
+      .mobileBanner {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .copy {
+      padding-bottom: 50px;
+
+      .text {
+        width: 90%;
+        margin: 0 auto;
+      }
+      .textures {
+        display: none;
+      }
+    }
+
+    .scroll-horizontal {
+      display: none;
+    }
   }
 }

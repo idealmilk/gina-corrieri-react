@@ -4,6 +4,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Phenomena from './../../assets/phenomena.mp4';
 import PhenomenaLogo from './../../assets/phenomena.png';
+import Image1 from './../../assets/Phenomena/IMG_0505.jpg'
 import Cord from './../../assets/Phenomena/Cord_Clear2.png';
 import Necklace from './../../assets/Phenomena/Accessories.png';
 import './styles.scss';
@@ -20,6 +21,7 @@ const Landing = props => {
         <video className='video' autoPlay loop muted>
           <source src={Phenomena} type='video/mp4' />
         </video>
+        <img src={Image1} alt="Phenomena"className="mobileBanner"/>
         <img src={PhenomenaLogo} alt="Phenomena Logo" className="logo"/>
       </div>
       <div className="copy" data-aos="fade-up">
