@@ -21,7 +21,7 @@ const Checkout = ({ }) => {
 
   return (
     <div className="checkout">
-      <MobilePageTitle title="Cart"/>
+      <MobilePageTitle title="Cart" />
       <div className="cart">
         {cartItems.length > 0 ? (
           <div>
