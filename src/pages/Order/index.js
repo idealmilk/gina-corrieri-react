@@ -31,7 +31,7 @@ const Order = () => {
         description="Gina Corrieri is an independent designer and reworker based in London."
       />
 
-      <h1>Order: #{orderID}</h1>
+      <h1>Order: #{orderID.substring(0,6)}</h1>
 
       <OrderDetails order={orderDetails} />
 

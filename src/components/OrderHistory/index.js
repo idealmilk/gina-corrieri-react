@@ -66,6 +66,8 @@ const OrderHistory = ({ orders }) => {
           {(Array.isArray(orders) && orders.length > 0) && orders.map((row, pos) => {
             const { documentID, orderCreatedDate } = row;
 
+            row.documentID = row.documentID.substring(0,6);
+
             return (
               <TableRow
                 key={pos}
