@@ -15,9 +15,6 @@ const Footer = props => {
               rel="noopener noreferrer">
                 Contact
             </a>
-            <Link to="/faq">
-              FAQ
-            </Link>
           </div>
           <div className="socials">
             <a 

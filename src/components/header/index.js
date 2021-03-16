@@ -40,21 +40,17 @@ const Header = props => {
 
 					<nav className={`mainMenu ${activeMenu ? 'active' : ''}`}>
 						<ul>
-						<li>
-							<Link to="/about">
-							About
-							</Link>
-						</li>
-						<li>
-							<Link to="/shop">
-							Shop
-							</Link>
-						</li>
-						<li>
-							<Link to="/features">
-							Features
-							</Link>
-						</li>
+							<li>
+								<a href="https://ginacorrieri.bigcartel.com">Shop</a>
+								{/* <Link to="/shop">
+									Shop
+								</Link> */}
+							</li>
+							<li>
+								<Link to="/features">
+								Features
+								</Link>
+							</li>
 						</ul>
 					</nav>
 
@@ -62,13 +58,24 @@ const Header = props => {
 
 					<ul>
 
-					<li className="cart">
+					{/* <li className="cart">
 						<Link to="/cart">
 							Cart <span className="cartSize">0{totalNumCartItems}</span>
 						</Link>
+					</li> */}
+					<li>
+						<Link to="/about">
+							About
+						</Link>
 					</li>
+					<li>
+						<Link to="/faq">
+              				FAQ
+            			</Link>
+					</li>
+					
 
-					{currentUser && [
+					{/* {currentUser && [
 						<li key={1}>
 							<div className="dropdown">
 								<div class="dropbtn">Account</div>
@@ -95,7 +102,7 @@ const Header = props => {
 							<i className="fas fa-user-circle"></i>
 						</Link>
 						</li>
-					]}
+					]} */}
 
 					<li className="mobileMenu">
 						<span onClick={() => setActiveMenu(!activeMenu)}>
