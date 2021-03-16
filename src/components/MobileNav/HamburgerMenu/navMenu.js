@@ -46,22 +46,6 @@ export function NavMenu({ isOpen }) {
   	return (
 		<NavMenuContainer>
 			<NavList>
-        		<NavLink
-					initial={false}
-					animate={isOpen ? "show" : "hide"}
-					variants={{
-						show: {
-							...variants.show,
-							transition: { delay: 0.3, duration: 0.2 },
-						},
-						hide: {
-							...variants.hide,
-							transition: { delay: 0.05, duration: 0.05 },
-						},
-					}}
-        		>
-          			<a href="/about">About</a>
-        		</NavLink>
 				<NavLink
 					initial={false}
 					animate={isOpen ? "show" : "hide"}
@@ -76,7 +60,7 @@ export function NavMenu({ isOpen }) {
 						},
 					}}
 				>
-					<a href="/shop">Shop</a>
+					<a href="https://ginacorrieri.bigcartel.com">Shop</a>
 				</NavLink>
 				<NavLink
 					initial={false}
@@ -94,6 +78,22 @@ export function NavMenu({ isOpen }) {
 				>
 					<a href="/features">Features</a>
 				</NavLink>
+        		<NavLink
+					initial={false}
+					animate={isOpen ? "show" : "hide"}
+					variants={{
+						show: {
+							...variants.show,
+							transition: { delay: 0.3, duration: 0.2 },
+						},
+						hide: {
+							...variants.hide,
+							transition: { delay: 0.05, duration: 0.05 },
+						},
+					}}
+        		>
+          			<a href="/about">About</a>
+        		</NavLink>
 				<NavLink
 					initial={false}
 					animate={isOpen ? "show" : "hide"}

@@ -37,20 +37,20 @@ const NavbarLogo = styled.div`
 	}
 `;
 
-const NavbarIcons = styled.div`
-	display: flex;
-	position: absolute;
-	top: 50%;
-	right: 0;
-	font-size: 2.5rem;
-	margin-right: 65px;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	transform: translateY(-50%);
-	a {
-		color: black;
-	}
-`;
+// const NavbarIcons = styled.div`
+// 	display: flex;
+// 	position: absolute;
+// 	top: 50%;
+// 	right: 0;
+// 	font-size: 2.5rem;
+// 	margin-right: 65px;
+// 	-webkit-transform: translateY(-50%);
+// 	-moz-transform: translateY(-50%);
+// 	transform: translateY(-50%);
+// 	a {
+// 		color: black;
+// 	}
+// `;
 
 const MobileNav = (props) => {
   return (
@@ -60,11 +60,11 @@ const MobileNav = (props) => {
 				<img src={Logo} alt="SimpleTut LOGO" />
 			</Link>
 		</NavbarLogo>
-		<NavbarIcons>
+		{/* <NavbarIcons>
 			<Link to="/cart">
 				<FaShoppingCart />
 			</Link>
-		</NavbarIcons>
+		</NavbarIcons> */}
 		<HamburgerMenu />	
     </NavbarContainer>
   );

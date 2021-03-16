@@ -153,7 +153,7 @@ const HamburgerMenu = props => {
                 variants={menuVariants}
                 transition={menuTransition}
             >
-				{currentUser && [
+				{/* {currentUser && [
 					<TopContainer>
 						<LoginButton
 							initial={false}
@@ -209,7 +209,7 @@ const HamburgerMenu = props => {
 							</span>
 						</LoginButton>
 					</TopContainer>
-				]}
+				]} */}
                 <ContentContainer>
                     <NavMenu isOpen={isOpen} />
                 </ContentContainer>
