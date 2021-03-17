@@ -61,17 +61,17 @@ const App = props => {
             <FAQIndex />
           </MainLayout>
         )} />
-        <Route exact path="/shop" render={() => (
+        {/* <Route exact path="/shop" render={() => (
           <MainLayout pageTitle="Shop">
             <Shop />
           </MainLayout>
-        )} />
+        )} /> */}
         <Route exact path="/features" render={() => (
           <MainLayout pageTitle="Features">
             <Features />
           </MainLayout>
         )} />
-        <Route path="/shop/:filterType" render={() => (
+        {/* <Route path="/shop/:filterType" render={() => (
           <MainLayout pageTitle="Shop">
             <Shop />
           </MainLayout>
@@ -129,7 +129,7 @@ const App = props => {
               <Admin />
             </AdminLayout>
           </WithAdminAuth>
-        )} />
+        )} /> */}
       </Switch>
     </div>
   );

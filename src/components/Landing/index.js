@@ -10,7 +10,7 @@ import Necklace from './../../assets/Phenomena/Accessories.png';
 import './styles.scss';
 import Gallery from './Gallery';
 
-const Landing = props => {
+const Landing = ({ project }) => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
@@ -40,7 +40,7 @@ const Landing = props => {
           <img src={Necklace} alt="Phenomena Necklace" />
         </div>
       </div>
-      <Gallery />
+      <Gallery project={project} />
     </div>
   );
 };
